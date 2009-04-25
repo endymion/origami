@@ -1,0 +1,19 @@
+h1. Chaise
+
+A Rails Engine plugin that handles the tedious parts of setting up HTML/CSS layouts.
+
+h2. Engine
+
+Chaise is a Rails engine. It works with versions of Rails greater than 2.3.
+
+In config/environment.rb:
+
+    config.gem "endymion-chaise",
+      :lib     => 'chaise',
+      :source  => 'http://gems.github.com',
+      :version => '>=0.1.0'
+
+Vendor the gem:
+
+    rake gems:install
+    rake gems:unpack
