@@ -4,7 +4,15 @@ A Rails Engine plugin that handles the tedious parts of setting up HTML/CSS layo
 
 h2. Engine
 
-Chaise is a Rails engine. It works with versions of Rails greater than 2.3.
+Chaise is a Rails engine. It works with versions of Rails greater than 2.3.  It will not work with previous version of Rails because they will not import the layout templates from app/views/layouts in Chaise.  It may be possible to make Chaise work with the Rails Engine plugin, but currently it only works with Rails 2.3.
+
+h2. Install
+
+Do this for now:
+
+	script/plugin install http://github.com/endymion/chaise/tree/master
+
+This is how I'm trying to get it to work but I'm currently having problems making Chaise available as a Ruby Gem:
 
 In config/environment.rb:
 
