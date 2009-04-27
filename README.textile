@@ -6,7 +6,7 @@ h2. The Problem
 
 Properly coding an HTML layout is a pain in the neck.  You have to put down your beautiful high-level Ruby code to deal with ugliness like:
 
-bc.
+pre.
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
