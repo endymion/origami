@@ -6,9 +6,9 @@ h2. The Problem
 
 Properly coding an HTML layout is a pain in the neck.  You have to put down your beautiful high-level Ruby code to deal with ugliness like:
 
-	<code><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"></code>
+    <code><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"></code>
 
 Code like this is important, but it's clutter that disrupts your thought processes.  Apply Feng Shui to your application and get the clutter out of sight.
 
@@ -16,13 +16,13 @@ h2. The Solution
 
 In your controller:
 
-	layout '2_column_left_menu_pixel'
+    layout '2_column_left_menu_pixel'
 
 In your views:
 
-	<% content_for :sidebar_A do %>
-	Put something here.
-	<% end %>
+    <% content_for :sidebar_A do %>
+    Put something here.
+    <% end %>
 
 Chaise does the rest.  It wraps your page body in the necessary divs, calculates the necessary styles, and applies them using app/views/layouts/application.rb.  You get validating HTML code that works in any browser and you don't have to think about HTML or CSS.  You focus on your application instead.
 
