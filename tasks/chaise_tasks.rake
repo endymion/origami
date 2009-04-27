@@ -1,4 +1,8 @@
-# desc "Explaining what the task does"
-# task :chaise do
-#   # Task goes here
-# end
+namespace :layouts do
+
+  desc "Build stylesheet assets using the current layout configuration."
+  task :build do
+    system "rsync -ruv vendor/plugins/chaise/public ."
+  end
+
+end
