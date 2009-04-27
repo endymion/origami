@@ -6,11 +6,9 @@ h2. The Problem
 
 Properly coding an HTML layout is a pain in the neck.  You have to put down your beautiful high-level Ruby code to deal with ugliness like:
 
-	<pre>
-	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	<code><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 	  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-	</pre>
+	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"></code>
 
 Code like this is important, but it's clutter that disrupts your thought processes.  Apply Feng Shui to your application and get the clutter out of sight.
 
@@ -123,6 +121,8 @@ Chaise is a Rails engine. It works with versions of Rails greater than 2.3.  It 
 h2. Install
 
 First make sure that you have "AssetPackager":http://synthesis.sbecker.net/pages/asset_packager
+
+	 script/plugin install git://github.com/sbecker/asset_packager.git
 
 Do this for now:
 
