@@ -1,6 +1,34 @@
 h1. Chaise
 
-A Rails Engine plugin that handles the tedious parts of setting up HTML/CSS layouts.
+A Rails Engine plugin that handles the tedious parts of setting up HTML/CSS layouts.  Developing Rails apps is a very high-level pursuit, but at some point you have to code an HTML layout and styling for your web applications.  That can be pretty tedious unless you have A Way.  There is no One True Way to lay out a web page, any more than there is One True Way to watch a sunset.  But Chaise is a nice way.
+
+h2. The Problem
+
+Properly coding an HTML layout is a pain in the neck.  You have to put down your beautiful high-level Ruby code to deal with ugliness like:
+
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+Code like this is important, but it's clutter that disrupts your thought processes.  Apply Feng Shui to your application and get the clutter out of sight.
+
+h2. The Solution
+
+In your config/environment.rb:
+
+	layouts = {
+		:format => 2_column_left_menu_pixel,
+		:width => 980,
+		:sidebar_A_width => 150
+	}
+	
+In your views:
+
+	<% content_for :sidebar_A do %>
+	Put something here.
+	<% end %>
+
+Chaise does the rest.  It wraps your page body in the necessary divs, calculates the necessary styles, and applies them using app/views/layouts/application.rb.  You get validating HTML code that works in any browser and you don't have to think about HTML or CSS.  You focus on your application instead.
 
 h2. Engine
 
