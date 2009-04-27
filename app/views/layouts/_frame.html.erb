@@ -1,9 +1,10 @@
-<%- if defined?(FRAME) -%>
+<%- if defined?(WIDTH) -%>
 <%# Use this to wrap a frame around your entire layout if you want. %>
+<div id="page">
 <%- end -%>
 
 <%= body %>
 
-<%- if defined?(FRAME) -%>
-
+<%- if defined?(WIDTH) -%>
+</div>
 <%- end -%>

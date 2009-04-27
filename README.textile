@@ -6,9 +6,11 @@ h2. The Problem
 
 Properly coding an HTML layout is a pain in the neck.  You have to put down your beautiful high-level Ruby code to deal with ugliness like:
 
+	<pre>
 	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 	  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	</pre>
 
 Code like this is important, but it's clutter that disrupts your thought processes.  Apply Feng Shui to your application and get the clutter out of sight.
 
@@ -47,7 +49,7 @@ h2. Optional
 
 Google Analytics snippets are a common enough layout element that you can generate one automatically by just setting your Google Analytics account code in your environment.rb:
 
-	GOOGLE_ANALYTICS_ACCOUNT = 'UA-376????-?'
+    GOOGLE_ANALYTICS_ACCOUNT = 'UA-376????-?'
 
 h2. Engine
 
