@@ -7,7 +7,7 @@ namespace :layouts do
     system "rsync -ruv #{File.dirname(__FILE__) + '/..'}/public ."
     
     # Blueprint.
-    system "cp #{File.dirname(__FILE__) + '/..'}/assets/blueprint-css/*.css public/stylesheets"
+    system "cp #{File.dirname(__FILE__) + '/..'}/assets/blueprint/blueprint-css/*.css public/stylesheets"
     
     # AssetPackager.
     system "cp #{File.dirname(__FILE__) + '/..'}/config/asset_packages.yml config/"
