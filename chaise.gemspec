@@ -5,7 +5,7 @@ Gem::Specification.new do |spec|
   spec.version = "0.1.1"
 
   spec.required_rubygems_version = Gem::Requirement.new(">= 0") if spec.respond_to? :required_rubygems_version=
-  spec.authors = ["Ryan Porter"]
+  spec.authors = ["Ryan Porter", "Matthew James Taylor"]
   spec.date = %q{2009-04-25}
   spec.description = <<-EOF
 Chaise is a Rails Engine plugin that handles the tedious parts of setting up HTML/CSS layoutspec.
@@ -22,19 +22,4 @@ EOF
   require 'rake'
   spec.files = FileList['lib/**/*.rb', 'bin/*', '[A-Z]*', 'test/**/*'].to_a
 
-  if spec.respond_to? :specification_version then
-    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
-    spec.specification_version = 2
-
-    if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
-      spec.add_runtime_dependency(%q<mime-types>, [">= 1.15"])
-      spec.add_runtime_dependency(%q<diff-lcs>, [">= 1.1.2"])
-    else
-      spec.add_dependency(%q<mime-types>, [">= 1.15"])
-      spec.add_dependency(%q<diff-lcs>, [">= 1.1.2"])
-    end
-  else
-    spec.add_dependency(%q<mime-types>, [">= 1.15"])
-    spec.add_dependency(%q<diff-lcs>, [">= 1.1.2"])
-  end
 end
