@@ -6,22 +6,20 @@ h2. The Problem
 
 Properly coding an HTML layout is a pain in the neck.  You have to put down your beautiful high-level Ruby code to deal with ugliness like:
 
+	<pre>
 	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 	  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	</pre>
 
 Code like this is important, but it's clutter that disrupts your thought processes.  Apply Feng Shui to your application and get the clutter out of sight.
 
 h2. The Solution
 
-In your config/environment.rb:
+In your controller:
 
-	layouts = {
-		:format => 2_column_left_menu_pixel,
-		:width => 980,
-		:sidebar_A_width => 150
-	}
-	
+	layout '2_column_left_menu_pixel'
+
 In your views:
 
 	<% content_for :sidebar_A do %>
@@ -29,6 +27,75 @@ In your views:
 	<% end %>
 
 Chaise does the rest.  It wraps your page body in the necessary divs, calculates the necessary styles, and applies them using app/views/layouts/application.rb.  You get validating HTML code that works in any browser and you don't have to think about HTML or CSS.  You focus on your application instead.
+
+h2. Features
+
+h3. Blueprint
+
+Sensible CSS defaults from "Blueprint":http://www.blueprintcss.org/.
+
+h3. AssetPackager
+
+Uses "AssetPackager":http://synthesis.sbecker.net/pages/asset_packager to compress CSS and Javascript, and to ensure that only ONE style file and ONE Javascript file needs to be sent to the browser in production mode.
+
+h3. Matthew James Taylor templates
+
+Chaise uses HTML/CSS layouts by "Matthew James Taylor":http://matthewjamestaylor.com/ which have many features:
+
+h3. No CSS Hacks
+
+The CSS used for the layouts in Chaise are 100% valid and hack free. To overcome Internet Explorer's broken box model, no horizontal padding or margins are used. Instead, this design uses percentage widths and clever relative positioning.
+
+h3. SEO friendly 2-1 column ordering
+
+The higher up content is in your page code, the more important it is considered by search engine algorithms. To make your website as optimised as possible your main page content must come before the side columns. This layout does exactly that: The the right-hand main page comes first, then the left column (see the nested div structure diagram for more info). The columns can also be configured in the opposite order if required.
+
+h3. Full length column background colours
+
+In this layout the background colours of each column will always stretch to the length of the longest column. This feature was traditionally only available with table based layouts but now with a little CSS trickery we can do exactly the same with divs. Say goodbye to annoying short columns!
+
+h3. No Images
+
+This layout requires no images. Many CSS website designs need images to colour in the column backgrounds but that is not necessary with this design. Why waste bandwidth and precious HTTP requests when you can do everything in pure CSS and XHTML?
+
+h3. No JavaScript
+
+JavaScript is not required. Some website layouts rely on JavaScript hacks to resize divs and force elements into place but you won't see any of that nonsense here.
+
+h3. Resizable text compatible
+
+This layout is fully compatible with resizable text. Resizable text is important for web accessibility. People who are vision impaired can make the text larger so it's easier for them to read. It is becoming increasingly more important to make your website resizable text compatible because people are expecting higher levels of web accessibility. Apple have made resizing the text on a website simple with the pinch gesture on their multi-touch trackpad. So far this trackpad is only available on the MacBook Air but it will soon be rolled out to all of their systems. Is your website text-resizing compatible?
+
+h3. No Quirks Mode
+
+This liquid layout does not require the XML declaration for it to display correctly in older versions of Internet Explorer. This version works without it and is thus never in quirks mode.
+
+h3. No IE Conditional Comments
+
+Only one stylesheet is used with this layout This means that IE conditional comments are not needed to set extra CSS rules for older versions of Internet Explorer.  This also means that ActivePackager can compress and consolidate the styles without breaking them.
+
+h3. Browser Compatibility
+
+This left menu liquid Layout has been tested on the following browsers:
+
+* iPhone & iPod Touch
+** Safari
+* Mac
+** Safari
+** Firefox
+** Opera 9.25
+** Netscape 9.0.0.5 & 7.1
+* Windows
+** Firefox 1.5, 2 & 3
+** Safari
+** Opera 8.1 & 9
+** Google Chrome
+** Explorer 5.5, 6 & 7
+** Netscape 8
+
+h3. Valid XHTML strict markup
+
+The HTML in this layout validates as XHTML 1.0 strict.
 
 h2. Customize
 
@@ -47,13 +114,15 @@ h2. Optional
 
 Google Analytics snippets are a common enough layout element that you can generate one automatically by just setting your Google Analytics account code in your environment.rb:
 
-	GOOGLE_ANALYTICS_ACCOUNT = 'UA-376????-?'
+    GOOGLE_ANALYTICS_ACCOUNT = 'UA-376????-?'
 
 h2. Engine
 
 Chaise is a Rails engine. It works with versions of Rails greater than 2.3.  It will not work with previous version of Rails because they will not import the layout templates from app/views/layouts in Chaise.  It may be possible to make Chaise work with the Rails Engine plugin, but currently it only works with Rails 2.3.
 
 h2. Install
+
+First make sure that you have "AssetPackager":http://synthesis.sbecker.net/pages/asset_packager
 
 Do this for now:
 
