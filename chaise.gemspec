@@ -13,7 +13,7 @@ EOF
   spec.summary = %q{A Rails Engine plugin for handling layouts.}
 
   spec.email = %q{rap@endymion.com}
-  spec.has_rdoc = false
+  spec.has_rdoc = true
   # spec.homepage = %q{http://endymion.com/gems/chaise}
   spec.rdoc_options = ["--inline-source", "--charset=UTF-8"]
   spec.require_paths = ["lib"]
