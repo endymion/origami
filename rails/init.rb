@@ -1,1 +1,2 @@
-# Include hook code here
+require 'app/helpers/layout_helper'
+ActionView::Base.send :include, LayoutHelper
