@@ -30,6 +30,19 @@ In your views:
 
 Chaise does the rest.  It wraps your page body in the necessary divs, calculates the necessary styles, and applies them using app/views/layouts/application.rb.  You get validating HTML code that works in any browser and you don't have to think about HTML or CSS.  You focus on your application instead.
 
+h2. Customize
+
+You can override any of the templates in the app/views/layouts folder in Chaise.  For example, if you're particular about your HTML DTD or something then copy the app/views/layouts/_head.html.erb file to your application and change it.  Rails 2.3 will use your template instead of the one from Chaise.
+
+If you're in a hurry then you might rather just customize the page title and a few other things using environment.rb constants:
+
+	TITLE = 'Your Web Site Title Here'
+	DESCRIPTION = 'Your meta description tag.' # Optional.
+	KEYWORDS = 'Your, Keywords, Here' # Optional.
+	ICON = 'http://you/your/shortcut/icon.gif'
+	THEME = 'blue' # Style sheet theme name. # Optional.
+	WIDTH = '980px' # The overall page width, as a CSS value.  ie: '980px', '100%', '100em'
+
 h2. Optional
 
 Google Analytics snippets are a common enough layout element that you can generate one automatically by just setting your Google Analytics account code in your environment.rb:

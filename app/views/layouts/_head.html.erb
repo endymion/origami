@@ -1,16 +1,16 @@
-<% if config_option(:title).nil? %>
+<% if TITLE.nil? %>
 	<%= body %>
 <% else %>
-	<title><%= config_option(:title) %></title>
+	<title><%= TITLE %></title>
 	<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
-	<% unless config_option(:description).nil? %>
-		<meta name="description" content="<%= config_option(:description) %>" />
+	<% unless DESCRIPTION.nil? %>
+		<meta name="description" content="<%= DESCRIPTION %>" />
 	<% end %>
-	<% unless config_option(:description).nil? %>
-		<meta name="keywords" content="<%= config_option(:keywords) %>" />
+	<% unless KEYWORDS.nil? %>
+		<meta name="keywords" content="<%= KEYWORDS %>" />
 	<% end %>
 	<meta name="robots" content="index, follow" />
-	<% unless config_option(:icon).nil? %>
-		<link rel="shortcut icon" href="<%= config_option(:icon) %>" type="image/x-icon" />
+	<% unless ICON.nil? %>
+		<link rel="shortcut icon" href="<%= ICON %>" type="image/x-icon" />
 	<% end %>
 <% end %>

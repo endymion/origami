@@ -1,14 +1,14 @@
-<%  theme = @theme || config_option(:theme)
+<%  theme = @theme || THEME
 	if theme.nil? %>
 	<%= body %>
 <% else %>
 	<%= stylesheet_link_tag "layouts/#{layout}" %>
 	<%= stylesheet_link_tag theme %>
 <% end %>
-<% unless config_option(:width).nil? %>
+<% unless WIDTH.nil? %>
 	<style>
 		#page {
-			width: <%= config_option(:width) %>;
+			width: <%= WIDTH %>;
 			margin-left: auto;
 			margin-right: auto;
 		}
