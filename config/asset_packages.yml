@@ -1,0 +1,20 @@
+--- 
+javascripts: 
+- base: 
+  - prototype
+  - effects
+  - dragdrop
+  - controls
+  - application
+stylesheets: 
+- base: 
+  - 1_column_em
+  - 1_column_percentage
+  - 1_column_pixel
+  - 2_column_left_menu_em
+  - 2_column_left_menu_percentage
+  - 2_column_left_menu_pixel
+  - 2_column_right_menu_em
+  - 2_column_right_menu_percentage
+  - 2_column_right_menu_pixel
+  - 3_column_blog_pixel
