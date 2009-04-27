@@ -261,7 +261,7 @@
 
 <% end %>
 
-<%= google_analytics_tracker GOOGLE_ANALYTICS_ACCOUNT unless GOOGLE_ANALYTICS_ACCOUNT.blank? -%>
+<%= google_analytics_tracker GOOGLE_ANALYTICS_ACCOUNT if defined?(GOOGLE_ANALYTICS_ACCOUNT) -%>
 
 </body>
 </html>

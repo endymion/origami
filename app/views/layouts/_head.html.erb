@@ -1,16 +1,12 @@
-<% if TITLE.nil? %>
-	<%= body %>
-<% else %>
-	<title><%= TITLE %></title>
-	<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
-	<% unless DESCRIPTION.nil? %>
-		<meta name="description" content="<%= DESCRIPTION %>" />
-	<% end %>
-	<% unless KEYWORDS.nil? %>
-		<meta name="keywords" content="<%= KEYWORDS %>" />
-	<% end %>
-	<meta name="robots" content="index, follow" />
-	<% unless ICON.nil? %>
-		<link rel="shortcut icon" href="<%= ICON %>" type="image/x-icon" />
-	<% end %>
+<title><%= defined?(TITLE) ? TITLE : 'Untitled' %></title>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+<% if defined?(DESCRIPTION) %>
+	<meta name="description" content="<%= DESCRIPTION %>" />
+<% end %>
+<% if defined?(KEYWORDS) %>
+	<meta name="keywords" content="<%= KEYWORDS %>" />
+<% end %>
+<meta name="robots" content="index, follow" />
+<% if defined?(ICON) %>
+	<link rel="shortcut icon" href="<%= ICON %>" type="image/x-icon" />
 <% end %>
