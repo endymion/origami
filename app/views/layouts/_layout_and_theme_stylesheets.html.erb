@@ -1,11 +1,12 @@
-<%  theme = @theme || THEME
+<%  theme = THEME if defined?(THEME)
+	theme = @theme unless @theme.nil?
 	if theme.nil? %>
 	<%= body %>
 <% else %>
 	<%= stylesheet_link_tag "layouts/#{layout}" %>
 	<%= stylesheet_link_tag theme %>
 <% end %>
-<% unless WIDTH.nil? %>
+<% if defined?(WIDTH) %>
 	<style>
 		#page {
 			width: <%= WIDTH %>;
