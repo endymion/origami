@@ -1,9 +1,9 @@
-<%- unless THEME.blank? -%>
+<%- if defined?(FRAME) -%>
 <%# Use this to wrap a frame around your entire layout if you want. %>
 <%- end -%>
 
 <%= body %>
 
-<%- unless THEME.blank? -%>
+<%- if defined?(FRAME) -%>
 
 <%- end -%>
