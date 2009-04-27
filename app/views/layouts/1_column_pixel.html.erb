@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" >
+<head>
+	<% head do %>
+		<title>The Full Page 1 column Liquid Layout. Pixel padding widths. Cross-Browser. Equal Height Columns.</title>
+		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+		<meta name="description" content="The Full Page 1 column Liquid Layout. Pixel padding widths. Cross-Browser. Equal Height Columns." />
+		<meta name="keywords" content="The Full Page 1 column Liquid Layout. Pixel padding widths. Cross-Browser. Equal Height Columns." />
+		<meta name="robots" content="index, follow" />
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+	<% end %>
+	<% layout_and_theme_stylesheets '1_column_pixel' do %>
+	    <style media="screen" type="text/css">
+	    /* <!-- */
+	    /* General styles */
+	    body {
+	        margin:0;
+	        padding:0;
+	        border:0;			/* This removes the border around the viewport in old versions of IE */
+	        width:100%;
+	        background:#fff;
+	        min-width:600px;    /* Minimum width of layout - remove line if not required */
+								/* The min-width property does not work in old versions of Internet Explorer */
+			font-size:90%;
+	    }
+		a {
+	    	color:#369;
+		}
+		a:hover {
+			color:#fff;
+			background:#369;
+			text-decoration:none;
+		}
+	    h1, h2, h3 {
+	        margin:.8em 0 .2em 0;
+	        padding:0;
+	    }
+	    p {
+	        margin:.4em 0 .8em 0;
+	        padding:0;
+	    }
+		img {
+			margin:10px 0 5px;
+		}
+		/* Header styles */
+	    #header {
+	        clear:both;
+	        float:left;
+	        width:100%;
+	    }
+		#header {
+			border-bottom:1px solid #000;
+		}
+		#header p,
+		#header h1,
+		#header h2 {
+		    padding:.4em 15px 0 15px;
+	        margin:0;
+		}
+		#header ul {
+		    clear:left;
+		    float:left;
+		    width:100%;
+		    list-style:none;
+		    margin:10px 0 0 0;
+		    padding:0;
+		}
+		#header ul li {
+		    display:inline;
+		    list-style:none;
+		    margin:0;
+		    padding:0;
+		}
+		#header ul li a {
+		    display:block;
+		    float:left;
+		    margin:0 0 0 1px;
+		    padding:3px 10px;
+		    text-align:center;
+		    background:#eee;
+		    color:#000;
+		    text-decoration:none;
+		    position:relative;
+		    left:15px;
+			line-height:1.3em;
+		}
+		#header ul li a:hover {
+		    background:#369;
+			color:#fff;
+		}
+		#header ul li a.active,
+		#header ul li a.active:hover {
+		    color:#fff;
+		    background:#000;
+		    font-weight:bold;
+		}
+		#header ul li a span {
+		    display:block;
+		}
+		/* 'widths' sub menu */
+		#layoutdims {
+			clear:both;
+			background:#eee;
+			border-top:4px solid #000;
+			margin:0;
+			padding:6px 15px !important;
+			text-align:right;
+		}
+		/* column container */
+		.colmask {
+			position:relative;		/* This fixes the IE7 overflow hidden bug and stops the layout jumping out of place */
+		    clear:both;
+		    float:left;
+	        width:100%;			/* width of whole page */
+			overflow:hidden;	/* This chops off any overhanging divs */
+		}
+		/* 1 column full page settings */
+		.fullpage {
+		    background:#fff;
+		}
+		.fullpage .col1 {
+	        margin:0 15px;
+		}
+		/* Footer styles */
+		#footer {
+	        clear:both;
+	        float:left;
+	        width:100%;
+			border-top:1px solid #000;
+	    }
+	    #footer p {
+	        padding:10px;
+	        margin:0;
+	    }
+	    /* --> */
+	    </style>
+	<% end %>
+</head>
+<body>
+
+<% frame do %>
+
+<div id="header">
+	<%= render :partial => 'shared/flashes' -%>
+	<% header do %>
+	    <p><a href="http://matthewjamestaylor.com/blog/ultimate-multi-column-liquid-layouts-em-and-pixel-widths" title="Ultimate multi-column liquid layouts (em and pixel widths)">&laquo; Back to the CSS article</a> by <a href="http://matthewjamestaylor.com">Matthew James Taylor</a></p>
+	    <h1>The 'Full Page' 1 column Liquid Layout (Pixel-widths)</h1>
+	    <h2>No CSS hacks. No Images. No JavaScript. Cross-browser.</h2>
+	    <ul>
+	        <li><a href="http://matthewjamestaylor.com/blog/ultimate-3-column-holy-grail-pixels.htm">3 Column <span>Holy Grail</span></a></li>
+	        <li><a href="http://matthewjamestaylor.com/blog/ultimate-3-column-blog-style-pixels.htm">3 Column <span>Blog Style</span></a></li>
+	        <li><a href="http://matthewjamestaylor.com/blog/ultimate-2-column-left-menu-pixels.htm">2 Column <span>Left Menu</span></a></li>
+	        <li><a href="http://matthewjamestaylor.com/blog/ultimate-2-column-right-menu-pixels.htm">2 Column <span>Right Menu</span></a></li>
+	        <li><a href="http://matthewjamestaylor.com/blog/ultimate-1-column-full-page-pixels.htm" class="active">1 Column <span>Full Page</span></a></li>
+	        <li><a href="http://matthewjamestaylor.com/blog/ultimate-stacked-columns-pixels.htm">Stacked <span>Columns</span></a></li>
+	    </ul>
+		<p id="layoutdims">Measure columns in: <strong>Pixel widths</strong> | <a href="http://matthewjamestaylor.com/blog/ultimate-1-column-full-page-ems.htm">Em widths</a> | <a href="http://matthewjamestaylor.com/blog/perfect-full-page.htm">Percentage widths</a></p>
+	<% end %>
+</div>
+<div class="colmask fullpage">
+    <div class="col1">
+		<% column_1 do %>
+	        <!-- Column 1 start -->
+	        <h2>Pixel dimensions of the full page layout</h2>
+			<img src="http://matthewjamestaylor.com/blog/ultimate-full-page-pixels-dimensions.gif" width="350" height="338" alt="Ultimate full page layout pixel dimensions" />
+			<p>The padding on either side of the page is in pixel widths. The main center of the page adjusts to fit the remaining screen resolution. Vertical dimensions are not set so they stretch to the height of the content.</p>
+			<h2>The nested div structure</h2>
+			<p>I've colour coded each div so it's easy to see:</p>
+			<img src="http://matthewjamestaylor.com/blog/perfect-full-page-div-structure.gif" width="350" height="369" alt="Full page layout nested div structure" />
+			<p>The header, colmask and footer divs are 100% wide and stacked vertically one after the other. Col1 is inside colmask.</p>
+			<h2>Full cross-browser support</h2>
+			<p>The holy grail 3 column liquid Layout has been tested on the following browsers:</p>
+			<h3>iPhone &amp; iPod Touch</h3>
+			<ul>
+				<li>Safari</li>
+			</ul>
+			<h3>Mac</h3>
+			<ul>
+				<li>Safari</li>
+				<li>Firefox</li>
+				<li>Opera 9.25</li>
+				<li>Netscape 9.0.0.5 &amp; 7.1</li>
+			</ul>
+			<h3>Windows</h3>
+			<ul>
+				<li>Firefox 1.5 &amp; 2</li>
+				<li>Safari</li>
+				<li>Opera 8.1 &amp; 9</li>
+				<li>Explorer 5.5, 6 &amp; 7</li>
+				<li>Netscape 8</li>
+			</ul>
+	        <h2>Valid XHTML strict markup</h2>
+			<p>The HTML in this layout validates as XHTML 1.0 strict.</p>
+	        <h2>Resizable text compatible</h2>
+			<p>This layout is fully compatible with resizable text. Resizable text is important for web accessibility. People who are vision impaired can make the text larger so it's easier for them to read. It is becoming increasingly more important to make your website resizable text compatible because people are expecting higher levels of web accessibility. Apple have made resizing the text on a website simple with the pinch gesture on their multi-touch trackpad. So far this trackpad is only available on the MacBook Air but it will soon be rolled out to all of their systems. Is your website text-resizing compatible?</p>
+			<h2>FREE for anyone to use</h2>
+	        <p>You don't have to pay anything. Simply view the source of this page and save the HTML onto your computer. My only suggestion is to put the CSS into a separate file. If you are feeling generous however, link back to this page so other people can find and use this layout too.</p>
+	        <h2>Free traffic for your website</h2>
+	        <p>If you use this layout for your website <a href="http://matthewjamestaylor.com/about">send me an email</a> with the link and any other information you have so I can add you to my list of example sites. Once I have a few links I'll publish them on my website and you'll get free traffic!</p>
+	        <h2>No CSS hacks</h2>
+	        <p>The CSS used for this layout is 100% valid and hack free. To overcome Internet Explorer's broken box model, no horizontal padding or margins are used. Instead, this design uses pixel widths and clever relative positioning.</p>
+	        <h2>SEO friendly 2-1 column ordering</h2>
+	        <p>The higher up content is in your page code, the more important it is considered by search engine algorithms. To make your website as optimised as possible your main page content must come before the side columns. This layout does exactly that: The center page comes first, then the left column and finally the right column (see the nested div structure diagram for more info). The columns can also be configured to any other order if required.</p>
+	        <h2>Equal height columns</h2>
+	        <p>It doesn't matter which column has the longest content, the background colour of all columns will stretch down to meet the footer. This feature was traditionally only available with table based layouts but now with a little CSS trickery we can do exactly the same with divs. Say goodbye to annoying short columns!</p>
+	        <h2>No Images</h2>
+			<p>This layout requires no images. Many CSS website designs need images to colour in the column backgrounds but that is not necessary with this design. Why waste bandwidth and precious HTTP requests when you can do everything in pure CSS and XHTML?</p>
+			<h2>No JavaScript</h2>
+			<p>JavaScript is not required. Some website layouts rely on JavaScript hacks to resize divs and force elements into place but you won't see any of that nonsense here.</p>
+	        <!-- Column 1 end -->
+		<% end %>
+    </div>
+</div>
+<div id="footer">
+	<% footer do %>
+	    <p>This page uses the <a href="http://matthewjamestaylor.com/blog/ultimate-1-column-full-page-pixels.htm">Ultimate 'Full Page' 1 column Liquid Layout</a> by <a href="http://matthewjamestaylor.com">Matthew James Taylor</a>. View more <a href="http://matthewjamestaylor.com/blog/-website-layouts">website layouts</a> and <a href="http://matthewjamestaylor.com/blog/-web-design">web design articles</a>.</p>
+	<% end %>
+</div>
+
+<% end %>
+
+<%= google_analytics_tracker config_option(:google_analytics_account) unless config_option(:google_analytics_account).blank? -%>
+
+</body>
+</html>
