@@ -8,9 +8,7 @@ namespace :layouts do
     
     # Blueprint.
     system "cp #{File.dirname(__FILE__) + '/..'}/assets/blueprint-css/blueprint/*.css public/stylesheets"
-    
-    # AssetPackager.
-    system "cp #{File.dirname(__FILE__) + '/..'}/config/asset_packages.yml config/"
+
   end
 
 end

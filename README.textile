@@ -32,10 +32,6 @@ h3. Blueprint
 
 Sensible CSS defaults from "Blueprint":http://www.blueprintcss.org/.
 
-h3. AssetPackager
-
-Uses "AssetPackager":http://synthesis.sbecker.net/pages/asset_packager to compress CSS and Javascript, and to ensure that only ONE style file and ONE Javascript file needs to be sent to the browser in production mode.
-
 h3. Matthew James Taylor templates
 
 Chaise uses HTML/CSS layouts by "Matthew James Taylor":http://matthewjamestaylor.com/ which have many features:
@@ -119,10 +115,6 @@ h2. Engine
 Chaise is a Rails engine. It works with versions of Rails greater than 2.3.  It will not work with previous version of Rails because they will not import the layout templates from app/views/layouts in Chaise.  It may be possible to make Chaise work with the Rails Engine plugin, but currently it only works with Rails 2.3.
 
 h2. Install
-
-First make sure that you have "AssetPackager":http://synthesis.sbecker.net/pages/asset_packager
-
-	 script/plugin install git://github.com/sbecker/asset_packager.git
 
 Do this for now:
 
