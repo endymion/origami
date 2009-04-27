@@ -16,14 +16,10 @@ Code like this is important, but it's clutter that disrupts your thought process
 
 h2. The Solution
 
-In your config/environment.rb:
+In your controller:
 
-	layouts = {
-		:format => 2_column_left_menu_pixel,
-		:width => 980,
-		:sidebar_A_width => 150
-	}
-	
+	layout '2_column_left_menu_pixel'
+
 In your views:
 
 	<% content_for :sidebar_A do %>
