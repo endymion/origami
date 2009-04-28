@@ -30,7 +30,7 @@ h2. Features
 
 h3. Blueprint
 
-Sensible CSS defaults from "Blueprint":http://www.blueprintcss.org/.
+Sensible CSS defaults from "BlueTrip":http://bluetrip.org
 
 h3. Matthew James Taylor templates
 
