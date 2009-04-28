@@ -1,5 +1,15 @@
 <div id="flash">
   <% flash.each do |key, value| -%>
-    <div id="flash_<%= key -%>"><%= html_escape(value) %></div>
+    <p id="flash_<%= key -%>" class="<%= key -%>">
+		<%= case key
+			when 'success':
+				image_tag 'bluetrip/icons/tick.png'
+			when 'error':
+				image_tag 'bluetrip/icons/cross.png'
+			when 'notice':
+				image_tag 'bluetrip/icons/key.png'
+			end -%>
+		<%= html_escape(value) -%>
+	</p>
   <% end -%>
 </div>

@@ -20,7 +20,10 @@ In your controller:
 
 In your views:
 
-    <% content_for :sidebar_A do %>
+	Blah blah blah the body of your view automatically goes in "column_1", which
+	will always be at the top of the HTML file and other columns will always 
+	come after it.
+    <% content_for :column_2 do %>
     Put something here.
     <% end %>
 
