@@ -19,7 +19,6 @@
 	        padding:0;
 	        border:0;			/* This removes the border around the viewport in old versions of IE */
 	        width:100%;
-	        background:#fff;
 	        min-width:600px;    /* Minimum width of layout - remove line if not required */
 								/* The min-width property does not work in old versions of Internet Explorer */
 	    }
@@ -122,7 +121,6 @@
 <% frame do %>
 
 <div id="header">
-	<%= render :partial => 'layouts/flashes' -%>
 	<% header do %>
 	    <p><a href="http://matthewjamestaylor.com/blog/ultimate-multi-column-liquid-layouts-em-and-pixel-widths" title="Ultimate multi-column liquid layouts (em and pixel widths)">&laquo; Back to the CSS article</a> by <a href="http://matthewjamestaylor.com">Matthew James Taylor</a></p>
 	    <h1>The 'Full Page' 1 column Liquid Layout (Em-widths)</h1>
@@ -140,6 +138,7 @@
 </div>
 <div class="colmask fullpage">
     <div class="col1">
+		<%= render :partial => 'layouts/flashes' -%>
 		<% column_1 do %>
 	        <!-- Column 1 start -->
 	        <h2>Em dimensions of the full page layout</h2>

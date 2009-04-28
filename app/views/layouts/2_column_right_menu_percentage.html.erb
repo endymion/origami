@@ -18,7 +18,6 @@
 			padding:0;
 			border:0;			/* This removes the border around the viewport in old versions of IE */
 			width:100%;
-			background:#fff;
 			min-width:600px;    	/* Minimum width of layout - remove line if not required */
 							/* The min-width property does not work in old versions of Internet Explorer */
 		}
@@ -146,7 +145,6 @@
 <% frame do %>
 
 <div id="header">
-	<%= render :partial => 'layouts/flashes' -%>
 	<p><a href="http://matthewjamestaylor.com/blog/perfect-multi-column-liquid-layouts" title="Perfect multi-column liquid layouts - iPhone compatible">&laquo; Back to the CSS article</a> by <a href="http://matthewjamestaylor.com">Matthew James Taylor</a></p>
 	<h1>The Perfect 'Right Menu' 2 Column Liquid Layout (Percentage widths)</h1>
 	<h2>No CSS hacks. SEO friendly. No Images. No JavaScript. Cross-browser &amp; iPhone compatible.</h2>
@@ -164,6 +162,7 @@
 <div class="colmask rightmenu">
 	<div class="colleft">
 		<div class="col1">
+			<%= render :partial => 'layouts/flashes' -%>
 			<% column_1 do %>
 				<!-- Column 1 start -->
 				<h2>Percentage dimensions of the right menu layout</h2>

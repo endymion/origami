@@ -19,7 +19,6 @@
 	        padding:0;
 	        border:0;			/* This removes the border around the viewport in old versions of IE */
 	        width:100%;
-	        background:#fff;
 	        min-width:600px;    /* Minimum width of layout - remove line if not required */
 								/* The min-width property does not work in old versions of Internet Explorer */
 	    }
@@ -152,7 +151,6 @@
 <% frame do %>
 
 <div id="header">
-	<%= render :partial => 'layouts/flashes' -%>
 	<% header do %>
 	    <p><a href="http://matthewjamestaylor.com/blog/ultimate-multi-column-liquid-layouts-em-and-pixel-widths" title="Ultimate multi-column liquid layouts (em and pixel widths)">&laquo; Back to the CSS article</a> by <a href="http://matthewjamestaylor.com">Matthew James Taylor</a></p>
 	    <h1>The 'Left Menu' 2 column Liquid Layout (Pixel-widths)</h1>
@@ -172,6 +170,7 @@
     <div class="colright">
         <div class="col1wrap">
             <div class="col1">
+				<%= render :partial => 'layouts/flashes' -%>
 				<% column_1 do %>
 	                <!-- Column 2 start -->
 	                <h2>Pixel dimensions of the left menu layout</h2>
@@ -238,13 +237,6 @@
 	    <p>This page uses the <a href="http://matthewjamestaylor.com/blog/ultimate-2-column-left-menu-pixels.htm">Ultimate 'Left Menu' 2 column Liquid Layout</a> by <a href="http://matthewjamestaylor.com">Matthew James Taylor</a>. View more <a href="http://matthewjamestaylor.com/blog/-website-layouts">website layouts</a> and <a href="http://matthewjamestaylor.com/blog/-web-design">web design articles</a>.</p>
 	<% end %>
 </div>
-
-<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
-</script>
-<script type="text/javascript">
-_uacct = "UA-1848067-8";
-urchinTracker();
-</script>
 
 <% end %>
 

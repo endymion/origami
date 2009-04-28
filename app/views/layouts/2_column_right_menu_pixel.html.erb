@@ -19,7 +19,6 @@
 	        padding:0;
 	        border:0;			/* This removes the border around the viewport in old versions of IE */
 	        width:100%;
-	        background:#fff;
 	        min-width:600px;    /* Minimum width of layout - remove line if not required */
 								/* The min-width property does not work in old versions of Internet Explorer */
 	    }
@@ -151,6 +150,7 @@
 <% frame do %>
 
 <div id="header">
+	<% header do %>
     <p><a href="http://matthewjamestaylor.com/blog/ultimate-multi-column-liquid-layouts-em-and-pixel-widths" title="Ultimate multi-column liquid layouts (em and pixel widths)">&laquo; Back to the CSS article</a> by <a href="http://matthewjamestaylor.com">Matthew James Taylor</a></p>
     <h1>The 'Right Menu' 2 column Liquid Layout (Pixel-widths)</h1>
     <h2>No CSS hacks. SEO friendly. Cross-browser. Equal height columns.</h2>
@@ -163,11 +163,14 @@
         <li><a href="http://matthewjamestaylor.com/blog/ultimate-stacked-columns-pixels.htm">Stacked <span>Columns</span></a></li>
     </ul>
 	<p id="layoutdims">Measure columns in: <strong>Pixel widths</strong> | <a href="http://matthewjamestaylor.com/blog/ultimate-2-column-right-menu-ems.htm">Em widths</a> | <a href="http://matthewjamestaylor.com/blog/perfect-2-column-right-menu.htm">Percentage widths</a></p>
+	<% end %>
 </div>
 <div class="colmask rightmenu">
     <div class="colleft">
         <div class="col1wrap">
             <div class="col1">
+				<% column_1 do %>
+				<%= render :partial => 'layouts/flashes' -%>
                 <!-- Column 1 start -->
                 <h2>Pixel dimensions of the right menu layout</h2>
 				<img src="http://matthewjamestaylor.com/blog/ultimate-2-column-right-menu-pixels-dimensions.gif" width="350" height="370" alt="Two column right menu layout pixel dimensions" />
@@ -202,9 +205,11 @@
                 <h2>Free traffic for your website</h2>
                 <p>If you use this layout for your website <a href="http://matthewjamestaylor.com/about">send me an email</a> with the link and any other information you have so I can add you to my list of example sites. Once I have a few links I'll publish them on my website and you'll get free traffic!</p>
 				<!-- Column 1 end -->
-            </div>
+				<% end %>
+           </div>
         </div>
         <div class="col2">
+			<% column_2 do %>
             <!-- Column 2 start -->
             <h2>No CSS hacks</h2>
             <p>The CSS used for this layout is 100% valid and hack free. To overcome Internet Explorer's broken box model, no horizontal padding or margins are used. Instead, this design uses pixel widths and clever relative positioning.</p>
@@ -221,19 +226,19 @@
             <h2>Resizable text compatible</h2>
 			<p>This layout is fully compatible with resizable text. Resizable text is important for web accessibility. People who are vision impaired can make the text larger so it's easier for them to read. It is becoming increasingly more important to make your website resizable text compatible because people are expecting higher levels of web accessibility. Apple have made resizing the text on a website simple with the pinch gesture on their multi-touch trackpad. So far this trackpad is only available on the MacBook Air but it will soon be rolled out to all of their systems. Is your website text-resizing compatible?</p>
 			<!-- Column 2 end -->
+			<% end %>
         </div>
     </div>
 </div>
 <div id="footer">
+	<% footer do %>
     <p>This page uses the <a href="http://matthewjamestaylor.com/blog/ultimate-2-column-right-menu-pixels.htm">Ultimate 'Right Menu' 2 column Liquid Layout</a> by <a href="http://matthewjamestaylor.com">Matthew James Taylor</a>. View more <a href="http://matthewjamestaylor.com/blog/-website-layouts">website layouts</a> and <a href="http://matthewjamestaylor.com/blog/-web-design">web design articles</a>.</p>
+	<% end %>
 </div>
 
-<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
-</script>
-<script type="text/javascript">
-_uacct = "UA-1848067-8";
-urchinTracker();
-</script>
+<% end %>
+
+<%= google_analytics_tracker GOOGLE_ANALYTICS_ACCOUNT if defined?(GOOGLE_ANALYTICS_ACCOUNT) -%>
 
 </body>
 </html>

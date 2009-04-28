@@ -1,8 +1,4 @@
-<%- if defined?(WIDTH) -%>
-<div class="container" style="width:<%= WIDTH %>">
-<%- else -%>
-<div class="container" style="width: 100%;">
-<%- end -%>
+<div class="container<%= ' showgrid' if defined?(SHOWGRID) and SHOWGRID %>" style="width: <%= defined?(WIDTH) ? WIDTH : '100%' %>;">
 
 <%= body %>
 

@@ -18,7 +18,6 @@
 			padding:0;
 			border:0;			/* This removes the border around the viewport in old versions of IE */
 			width:100%;
-			background:#fff;
 			min-width:600px;		/* Minimum width of layout - remove line if not required */
 							/* The min-width property does not work in old versions of Internet Explorer */
 		}
@@ -138,7 +137,6 @@
 <% frame do %>
 
 <div id="header">
-	<%= render :partial => 'layouts/flashes' -%>
 	<% header do %>
 		<p><a href="http://matthewjamestaylor.com/blog/perfect-multi-column-liquid-layouts" title="Perfect multi-column liquid layouts - iPhone compatible">&laquo; Back to the CSS article</a> by <a href="http://matthewjamestaylor.com">Matthew James Taylor</a></p>
 		<h1>The Perfect Full Page Liquid Layout</h1>
@@ -157,6 +155,7 @@
 </div>
 <div class="colmask fullpage">
 	<div class="col1">
+		<%= render :partial => 'layouts/flashes' -%>
 		<% column_1 do %>
 			<!-- Column 1 start -->
 			<h2>Percentage dimensions of the full page layout</h2>
