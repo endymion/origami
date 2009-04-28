@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" >
-<head>
-	<% head do %>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<% head do %>
 		<title>The Left Menu 2 column Liquid Layout. Em widths. Cross-Browser. Equal Height Columns.</title>
 		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
 		<meta name="description" content="The Left Menu 2 column Liquid Layout. Em widths. Cross-Browser. Equal Height Columns." />
 		<meta name="keywords" content="The Left Menu 2 column Liquid Layout. Em widths. Cross-Browser. Equal Height Columns." />
 		<meta name="robots" content="index, follow" />
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-	<% end %>
+
 	<% layout_and_theme_stylesheets '2_column_left_menu_em' do %>
 	    <style media="screen" type="text/css">
 	    /* <!-- */
@@ -19,6 +18,7 @@
 	        padding:0;
 	        border:0;			/* This removes the border around the viewport in old versions of IE */
 	        width:100%;
+	        background:#fff;
 	        min-width:600px;    /* Minimum width of layout - remove line if not required */
 								/* The min-width property does not work in old versions of Internet Explorer */
 	    }
@@ -145,12 +145,12 @@
 	    </style>
 	    <![endif]-->
 	<% end %>
-</head>
-<body>
+<% end %>
 
-<% frame do %>
+<% body do %>
 
 <div id="header">
+	<%= render :partial => 'layouts/flashes' -%>
 	<% header do %>
 	    <p><a href="http://matthewjamestaylor.com/blog/ultimate-multi-column-liquid-layouts-em-and-pixel-widths" title="Ultimate multi-column liquid layouts (em and pixel widths)">&laquo; Back to the CSS article</a> by <a href="http://matthewjamestaylor.com">Matthew James Taylor</a></p>
 	    <h1>The 'Left Menu' 2 column Liquid Layout (Em-widths)</h1>
@@ -170,7 +170,6 @@
     <div class="colright">
         <div class="col1wrap">
             <div class="col1">
-				<%= render :partial => 'layouts/flashes' -%>
 				<% column_1 do %>
 	                <!-- Column 2 start -->
 	                <h2>Em dimensions of the left menu layout</h2>
@@ -238,9 +237,7 @@
 	<% end %>
 </div>
 
-<% end %>
-
 <%= google_analytics_tracker GOOGLE_ANALYTICS_ACCOUNT if defined?(GOOGLE_ANALYTICS_ACCOUNT) -%>
 
-</body>
+<% end %>
 </html>

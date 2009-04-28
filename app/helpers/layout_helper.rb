@@ -1,7 +1,7 @@
 module LayoutHelper
 
   def block_to_partial(partial_name, options = {}, &block)
-    options.merge!(:body => capture(&block))
+    options.merge!(:content => capture(&block))
     concat render(:partial => partial_name, :locals => options)
   end
 
@@ -13,8 +13,8 @@ module LayoutHelper
     block_to_partial('layouts/head', options, &block)
   end
 
-  def frame(options = {}, &block)
-    block_to_partial('layouts/frame', options, &block)
+  def body(options = {}, &block)
+    block_to_partial('layouts/body', options, &block)
   end
 
   def header(options = {}, &block)

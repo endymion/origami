@@ -1,14 +1,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
-<head>
-	<% head do %>
+<% head do %>
 		<title>The Perfect full page Liquid Layout: No CSS hacks. SEO friendly. iPhone compatible.</title>
 		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
 		<meta name="description" content="The Perfect full page Liquid Layout (double page): No CSS hacks. SEO friendly. iPhone compatible." />
 		<meta name="keywords" content="The Perfect full page Liquid Layout (double page): No CSS hacks. SEO friendly. iPhone compatible." />
 		<meta name="robots" content="index, follow" />
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-	<% end %>
+
 	<% layout_and_theme_stylesheets '1_column_percentage' do %>
 		<style media="screen" type="text/css">
 		/* <!-- */
@@ -36,50 +35,9 @@
 			padding:.4em 15px 0 15px;
 			margin:0;
 		}
-		#header ul {
-			clear:left;
-			float:left;
-			width:100%;
-			list-style:none;
-			margin:10px 0 0 0;
-			padding:0;
-		}
-		#header ul li {
-			display:inline;
-			list-style:none;
-			margin:0;
-			padding:0;
-		}
-		#header ul li a {
-			display:block;
-			float:left;
-			margin:0 0 0 1px;
-			padding:3px 10px;
-			text-align:center;
-			background:#eee;
-			color:#000;
-			text-decoration:none;
-			position:relative;
-			left:15px;
-			line-height:1.3em;
-		}
-		#header ul li a:hover {
-			background:#369;
-			color:#fff;
-		}
-		#header ul li a.active,
-		#header ul li a.active:hover {
-			color:#fff;
-			background:#000;
-			font-weight:bold;
-		}
-		#header ul li a span {
-			display:block;
-		}
 		/* 'widths' sub menu */
 		#layoutdims {
 			clear:both;
-			background:#eee;
 			border-top:4px solid #000;
 			margin:0;
 			padding:6px 15px !important;
@@ -110,9 +68,6 @@
 			overflow:hidden;
 		}
 		/* Full page settings */
-		.fullpage {
-			background:#fff;		/* page background colour */
-		}
 		.fullpage .col1 {
 			width:96%;			/* page width minus left and right padding */
 			left:2%;			/* page left padding */
@@ -130,11 +85,10 @@
 		}
 		/* --> */
 		</style>
-		<% end %>
-</head>
-<body>
+	<% end %>
+<% end %>
 
-<% frame do %>
+<% body do %>
 
 <div id="header">
 	<% header do %>
@@ -221,9 +175,7 @@
 	<% end %>
 </div>
 
-<% end %>
-
 <%= google_analytics_tracker GOOGLE_ANALYTICS_ACCOUNT if defined?(GOOGLE_ANALYTICS_ACCOUNT) -%>
 
-</body>
+<% end %>
 </html>

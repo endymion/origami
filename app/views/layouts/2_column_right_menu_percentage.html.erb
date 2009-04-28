@@ -1,14 +1,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
-<head>
-	<% head do %>
+<% head do %>
 		<title>The Perfect 2 Column Liquid Layout (right menu): No CSS hacks. SEO friendly. iPhone compatible.</title>
 		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
 		<meta name="description" content="The Perfect 2 Column Liquid Layout (right menu): No CSS hacks. SEO friendly. iPhone compatible." />
 		<meta name="keywords" content="The Perfect 2 Column Liquid Layout (right menu): No CSS hacks. SEO friendly. iPhone compatible." />
 		<meta name="robots" content="index, follow" />
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-	<% end %>
+
 	<% layout_and_theme_stylesheets '2_column_right_menu_percentage' do %>
 		<style media="screen" type="text/css">
 		/* <!-- */
@@ -139,10 +138,9 @@
 		/* --> */
 		</style>
 	<% end %>
-</head>
-<body>
+<% end %>
 
-<% frame do %>
+<% body do %>
 
 <div id="header">
 	<p><a href="http://matthewjamestaylor.com/blog/perfect-multi-column-liquid-layouts" title="Perfect multi-column liquid layouts - iPhone compatible">&laquo; Back to the CSS article</a> by <a href="http://matthewjamestaylor.com">Matthew James Taylor</a></p>
@@ -241,9 +239,7 @@
 	<% end %>
 </div>
 
-<% end %>
-
 <%= google_analytics_tracker GOOGLE_ANALYTICS_ACCOUNT if defined?(GOOGLE_ANALYTICS_ACCOUNT) -%>
 
-</body>
+<% end %>
 </html>
