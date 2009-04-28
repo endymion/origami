@@ -6,8 +6,9 @@ namespace :layouts do
     # Style sheets.
     system "rsync -ruv #{File.dirname(__FILE__) + '/..'}/public ."
     
-    # Blueprint.
-    system "cp #{File.dirname(__FILE__) + '/..'}/assets/blueprint-css/blueprint/*.css public/stylesheets"
+    # Bluetrip.
+    system "rsync -uv #{File.dirname(__FILE__) + '/..'}/assets/bluetrip-css-framework/css/*.css public/stylesheets/"
+    system "rsync -ruv #{File.dirname(__FILE__) + '/..'}/assets/bluetrip-css-framework/img/ public/images/bluetrip/"
 
   end
 

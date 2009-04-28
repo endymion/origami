@@ -10,3 +10,6 @@
 <% if defined?(ICON) %>
 	<link rel="shortcut icon" href="<%= ICON %>" type="image/x-icon" />
 <% end %>
+
+<%= stylesheet_link_tag 'screen', :media => 'screen, projection' %>
+<%= stylesheet_link_tag 'print', :media => 'print' %>

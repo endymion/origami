@@ -1,10 +1,9 @@
 <%- if defined?(WIDTH) -%>
-<%# Use this to wrap a frame around your entire layout if you want. %>
-<div id="page">
+<div class="container" style="width:<%= WIDTH %>">
+<%- else -%>
+<div class="container" style="width: 100%;">
 <%- end -%>
 
 <%= body %>
 
-<%- if defined?(WIDTH) -%>
 </div>
-<%- end -%>
