@@ -40,9 +40,5 @@ module LayoutHelper
   def google_analytics_tracker(account_id, options = {})
     render(:partial => 'layouts/google_analytics_tracker', :locals => options.merge(:account_id => account_id))
   end
-
-  def image_replacement(div_id, options = {}, &block)
-    block_to_partial('layouts/image_replacement', options.merge(:div_id => div_id), &block)
-  end
   
 end
