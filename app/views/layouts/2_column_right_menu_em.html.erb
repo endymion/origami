@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" >
-<head>
-	<% head do %>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<% head do %>
 		<title>The Right Menu 2 column Liquid Layout. Em widths. Cross-Browser. Equal Height Columns.</title>
 		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
 		<meta name="description" content="The Right Menu 2 column Liquid Layout. Em widths. Cross-Browser. Equal Height Columns." />
 		<meta name="keywords" content="The Right Menu 2 column Liquid Layout. Em widths. Cross-Browser. Equal Height Columns." />
 		<meta name="robots" content="index, follow" />
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-	<% end %>
+
 	<% layout_and_theme_stylesheets '2_column_right_menu_em' do %>
 	    <style media="screen" type="text/css">
 	    /* <!-- */
@@ -19,6 +18,7 @@
 	        padding:0;
 	        border:0;			/* This removes the border around the viewport in old versions of IE */
 	        width:100%;
+	        background:#fff;
 	        min-width:600px;    /* Minimum width of layout - remove line if not required */
 								/* The min-width property does not work in old versions of Internet Explorer */
 	    }
@@ -144,12 +144,12 @@
 	    </style>
 	    <![endif]-->
 	<% end %>
-</head>
-<body>
+<% end %>
 
-<% frame do %>
+<% body do %>
 
 <div id="header">
+	<%= render :partial => 'layouts/flashes' -%>
 	<% header do %>
 	    <p><a href="http://matthewjamestaylor.com/blog/ultimate-multi-column-liquid-layouts-em-and-pixel-widths" title="Ultimate multi-column liquid layouts (em and pixel widths)">&laquo; Back to the CSS article</a> by <a href="http://matthewjamestaylor.com">Matthew James Taylor</a></p>
 	    <h1>The 'Right Menu' 2 column Liquid Layout (Em-widths)</h1>
@@ -169,46 +169,8 @@
     <div class="colleft">
         <div class="col1wrap">
             <div class="col1">
-				<%= render :partial => 'layouts/flashes' -%>
 				<% column_1 do %>
-	                <!-- Column 1 start -->
-	                <h2>Em dimensions of the right menu layout</h2>
-					<img src="http://matthewjamestaylor.com/blog/ultimate-2-column-right-menu-ems-dimensions.gif" width="350" height="370" alt="Two column right menu layout em dimensions" />
-					<p>In this layout the right column width is in ems and the main page on the left adjusts in size to fill the rest of the screen. Vertical dimensions are left unset so they automatically stretch to the height of the content. Layouts that use em widths are great when you want text to always line-break at the same point regardless of the text size. When you resize the text in your browser the width of the columns changes at the same rate.</p>
-					<h2>The nested div structure</h2>
-					<p>I've colour coded each div so it's easy to see:</p>
-					<img src="http://matthewjamestaylor.com/blog/ultimate-2-column-right-menu-div-structure.gif" width="350" height="369" alt="Two column right menu layout nested div structure" />
-					<p>The header, colmask and footer divs are 100% wide and stacked vertically one after the other. Colleft is inside colmask and the right content column is inside colleft. The main 'left' page needs to be inside the col1wrap div so it can be positioned correctly (This extra div is not required on the <a href="perfect-2-column-right-menu.htm">percentage width version</a>). Notice that the main content column (col1) comes before the left column, this is great for SEO.</p>
-					<h2>Full cross-browser support</h2>
-					<p>The holy grail 3 column liquid Layout has been tested on the following browsers:</p>
-					<h3>iPhone &amp; iPod Touch</h3>
-					<ul>
-						<li>Safari</li>
-					</ul>
-					<h3>Mac</h3>
-					<ul>
-						<li>Safari</li>
-						<li>Firefox</li>
-						<li>Opera 9.25</li>
-						<li>Netscape 9.0.0.5 &amp; 7.1</li>
-					</ul>
-					<h3>Windows</h3>
-					<ul>
-						<li>Firefox 1.5 &amp; 2</li>
-						<li>Safari</li>
-						<li>Opera 8.1 &amp; 9</li>
-						<li>Explorer 5.5, 6 &amp; 7</li>
-						<li>Netscape 8</li>
-					</ul>
-	                <h2>Valid XHTML strict markup</h2>
-					<p>The HTML in this layout validates as XHTML 1.0 strict.</p>
-	                <h2>Resizable text compatible</h2>
-					<p>This layout is fully compatible with resizable text. Resizable text is important for web accessibility. People who are vision impaired can make the text larger so it's easier for them to read. It is becoming increasingly more important to make your website resizable text compatible because people are expecting higher levels of web accessibility. Apple have made resizing the text on a website simple with the pinch gesture on their multi-touch trackpad. So far this trackpad is only available on the MacBook Air but it will soon be rolled out to all of their systems. Is your website text-resizing compatible?</p>
-					<h2>FREE for anyone to use</h2>
-	                <p>You don't have to pay anything. Simply view the source of this page and save the HTML onto your computer. My only suggestion is to put the CSS into a separate file. If you are feeling generous however, link back to this page so other people can find and use this layout too.</p>
-	                <h2>Free traffic for your website</h2>
-	                <p>If you use this layout for your website <a href="http://matthewjamestaylor.com/about">send me an email</a> with the link and any other information you have so I can add you to my list of example sites. Once I have a few links I'll publish them on my website and you'll get free traffic!</p>
-					<!-- Column 1 end -->
+					<!-- Your page content will end up in here. -->
 				<% end %>
             </div>
         </div>
@@ -236,9 +198,7 @@
 	<% end %>
 </div>
 
-<% end %>
-
 <%= google_analytics_tracker GOOGLE_ANALYTICS_ACCOUNT if defined?(GOOGLE_ANALYTICS_ACCOUNT) -%>
 
-</body>
+<% end %>
 </html>
