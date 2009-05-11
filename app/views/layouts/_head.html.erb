@@ -1,16 +1,23 @@
+<head>
 <title><%= defined?(TITLE) ? TITLE : 'Untitled' %></title>
 <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
-<% if defined?(DESCRIPTION) %>
-	<meta name="description" content="<%= DESCRIPTION %>" />
-<% end %>
-<% if defined?(KEYWORDS) %>
-	<meta name="keywords" content="<%= KEYWORDS %>" />
-<% end %>
+<% if defined?(DESCRIPTION) -%>
+<meta name="description" content="<%= DESCRIPTION %>" />
+<% end -%>
+<% if defined?(KEYWORDS) -%>
+<meta name="keywords" content="<%= KEYWORDS %>" />
+<% end -%>
+<% if defined?(ICON) -%>
+<link rel="shortcut icon" href="<%= ICON %>" type="image/x-icon" />
+<% end -%>
+<% if defined?(WIDTH) -%>
+<meta name = "viewport" content = "width = <%= WIDTH %>"/>
+<% end -%>
 <meta name="robots" content="index, follow" />
-<% if defined?(ICON) %>
-	<link rel="shortcut icon" href="<%= ICON %>" type="image/x-icon" />
-<% end %>
 
 <%= stylesheet_link_tag 'screen', :media => 'screen, projection' %>
 <%= stylesheet_link_tag 'style', :media => 'screen, projection' %>
 <%= stylesheet_link_tag 'print', :media => 'print' %>
+
+<%= render :partial => 'layouts/javascript_includes' %>
+</head>

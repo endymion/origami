@@ -1,7 +1,7 @@
 module LayoutHelper
 
   def block_to_partial(partial_name, options = {}, &block)
-    options.merge!(:body => capture(&block))
+    options.merge!(:content => capture(&block))
     concat render(:partial => partial_name, :locals => options)
   end
 
@@ -13,8 +13,8 @@ module LayoutHelper
     block_to_partial('layouts/head', options, &block)
   end
 
-  def frame(options = {}, &block)
-    block_to_partial('layouts/frame', options, &block)
+  def body(options = {}, &block)
+    block_to_partial('layouts/body', options, &block)
   end
 
   def header(options = {}, &block)
@@ -39,10 +39,6 @@ module LayoutHelper
 
   def google_analytics_tracker(account_id, options = {})
     render(:partial => 'layouts/google_analytics_tracker', :locals => options.merge(:account_id => account_id))
-  end
-
-  def image_replacement(div_id, options = {}, &block)
-    block_to_partial('layouts/image_replacement', options.merge(:div_id => div_id), &block)
   end
   
 end
