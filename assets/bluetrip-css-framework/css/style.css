@@ -2,6 +2,6 @@
 #header, #frame, #column_1, #column_2, #column_3, #footer { line-height: 0; }
 
 /* Your site styles go here.  If you change these in your style.css in your own
-   public/stylesheets then your styles will NOT be over-written when you upgrade Chaise
+   public/stylesheets then your styles will NOT be over-written when you upgrade Origami
    and run layous:build. */
 body { background-color: #999999; }

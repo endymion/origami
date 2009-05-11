@@ -56,7 +56,7 @@
     </tr>
     <tr class="top-aligned-row">
       <td><strong>Last Update:</strong></td>
-      <td>Sat Apr 25 18:35:32 -0400 2009</td>
+      <td>Mon May 11 11:25:14 -0400 2009</td>
     </tr>
     </table>
   </div>
@@ -70,24 +70,254 @@
 
     <div id="description">
       <p>
-h1. Chaise
+h1. Origami
 </p>
 <p>
 A Rails Engine plugin that handles the tedious parts of setting up HTML/CSS
-layouts.
+layouts. Developing Rails apps is a very high-level pursuit, but at some
+point you have to code an HTML layout and styling for your web
+applications. That can be pretty tedious unless you have A Way. There is no
+One True Way to lay out a web page, any more than there is One True Way to
+watch a sunset. But Origami is a nice way.
 </p>
+<p>
+h2. The Problem
+</p>
+<p>
+Properly coding an HTML layout is a pain in the neck. You have to put down
+your beautiful high-level Ruby code to deal with ugliness like:
+</p>
+<pre>
+        &lt;pre&gt;&lt;code&gt;&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot;
+        &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
+        &lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xml:lang=&quot;en&quot; lang=&quot;en&quot;&gt;&lt;/code&gt;&lt;/pre&gt;
+</pre>
+<p>
+Code like this is important, but it&#8216;s clutter that disrupts your
+thought processes. Apply Feng Shui to your application and get the clutter
+out of sight.
+</p>
+<p>
+h2. The Solution
+</p>
+<p>
+In your controller:
+</p>
+<pre>
+    layout '2_column_left_menu_pixel'
+</pre>
+<p>
+In your views:
+</p>
+<pre>
+        Blah blah blah the body of your view automatically goes in &quot;column_1&quot;, which
+        will always be at the top of the HTML file and other columns will always
+        come after it.
+    &lt;% content_for :column_2 do %&gt;
+    Put something here.
+    &lt;% end %&gt;
+</pre>
+<p>
+Origami does the rest. It wraps your page body in the necessary divs,
+calculates the necessary styles, and applies them using
+app/views/layouts/application.rb. You get validating HTML code that works
+in any browser and you don&#8216;t have to think about HTML or CSS. You
+focus on your application instead.
+</p>
+<p>
+h2. Features
+</p>
+<p>
+h3. Blueprint
+</p>
+<p>
+Sensible CSS defaults from &quot;BlueTrip&quot;:<a
+href="http://bluetrip.org">bluetrip.org</a>
+</p>
+<p>
+h3. Matthew James Taylor templates
+</p>
+<p>
+Origami uses HTML/CSS layouts by &quot;Matthew James Taylor&quot;:<a
+href="http://matthewjamestaylor.com">matthewjamestaylor.com</a>/ which have
+many features:
+</p>
+<p>
+h3. No CSS Hacks
+</p>
+<p>
+The CSS used for the layouts in Origami are 100% valid and hack free. To
+overcome Internet Explorer&#8216;s broken box model, no horizontal padding
+or margins are used. Instead, this design uses percentage widths and clever
+relative positioning.
+</p>
+<p>
+h3. SEO friendly 2-1 column ordering
+</p>
+<p>
+The higher up content is in your page code, the more important it is
+considered by search engine algorithms. To make your website as optimised
+as possible your main page content must come before the side columns. This
+layout does exactly that: The the right-hand main page comes first, then
+the left column (see the nested div structure diagram for more info). The
+columns can also be configured in the opposite order if required.
+</p>
+<p>
+h3. Full length column background colours
+</p>
+<p>
+In this layout the background colours of each column will always stretch to
+the length of the longest column. This feature was traditionally only
+available with table based layouts but now with a little CSS trickery we
+can do exactly the same with divs. Say goodbye to annoying short columns!
+</p>
+<p>
+h3. No Images
+</p>
+<p>
+This layout requires no images. Many CSS website designs need images to
+colour in the column backgrounds but that is not necessary with this
+design. Why waste bandwidth and precious HTTP requests when you can do
+everything in pure CSS and XHTML?
+</p>
+<p>
+h3. No JavaScript
+</p>
+<p>
+JavaScript is not required. Some website layouts rely on JavaScript hacks
+to resize divs and force elements into place but you won&#8216;t see any of
+that nonsense here.
+</p>
+<p>
+h3. Resizable text compatible
+</p>
+<p>
+This layout is fully compatible with resizable text. Resizable text is
+important for web accessibility. People who are vision impaired can make
+the text larger so it&#8216;s easier for them to read. It is becoming
+increasingly more important to make your website resizable text compatible
+because people are expecting higher levels of web accessibility. Apple have
+made resizing the text on a website simple with the pinch gesture on their
+multi-touch trackpad. So far this trackpad is only available on the MacBook
+Air but it will soon be rolled out to all of their systems. Is your website
+text-resizing compatible?
+</p>
+<p>
+h3. No Quirks Mode
+</p>
+<p>
+This liquid layout does not require the XML declaration for it to display
+correctly in older versions of Internet Explorer. This version works
+without it and is thus never in quirks mode.
+</p>
+<p>
+h3. No IE Conditional Comments
+</p>
+<p>
+Only one stylesheet is used with this layout This means that IE conditional
+comments are not needed to set extra CSS rules for older versions of
+Internet Explorer. This also means that ActivePackager can compress and
+consolidate the styles without breaking them.
+</p>
+<p>
+h3. Browser Compatibility
+</p>
+<p>
+This left menu liquid Layout has been tested on the following browsers:
+</p>
+<ul>
+<li>iPhone &amp; iPod Touch
+
+</li>
+</ul>
+<p>
+** Safari
+</p>
+<ul>
+<li>Mac
+
+</li>
+</ul>
+<p>
+** Safari ** Firefox ** Opera 9.25 ** Netscape 9.0.0.5 &amp; 7.1
+</p>
+<ul>
+<li>Windows
+
+</li>
+</ul>
+<p>
+** Firefox 1.5, 2 &amp; 3 ** Safari ** Opera 8.1 &amp; 9 ** Google Chrome
+** Explorer 5.5, 6 &amp; 7 ** Netscape 8
+</p>
+<p>
+h3. Valid XHTML strict markup
+</p>
+<p>
+The HTML in this layout validates as XHTML 1.0 strict.
+</p>
+<p>
+h2. Customize
+</p>
+<p>
+You can override any of the templates in the app/views/layouts folder in
+Origami. For example, if you&#8216;re particular about your HTML DTD or
+something then copy the app/views/layouts/_head.html.erb file to your
+application and change it. Rails 2.3 will use your template instead of the
+one from Origami.
+</p>
+<p>
+If you&#8216;re in a hurry then you might rather just customize the page
+title and a few other things using environment.rb constants:
+</p>
+<pre>
+        TITLE = 'Your Web Site Title Here'
+        DESCRIPTION = 'Your meta description tag.' # Optional.
+        KEYWORDS = 'Your, Keywords, Here' # Optional.
+        ICON = 'http://you/your/shortcut/icon.gif'
+        THEME = 'blue' # Style sheet theme name. # Optional.
+        WIDTH = '980px' # The overall page width, as a CSS value.  ie: '980px', '100%', '100em'
+</pre>
+<p>
+h2. Optional
+</p>
+<p>
+Google Analytics snippets are a common enough layout element that you can
+generate one automatically by just setting your Google Analytics account
+code in your environment.rb:
+</p>
+<pre>
+    GOOGLE_ANALYTICS_ACCOUNT = 'UA-376????-?'
+</pre>
 <p>
 h2. Engine
 </p>
 <p>
-Chaise is a Rails engine. It works with versions of Rails greater than 2.3.
+Origami is a Rails engine. It works with versions of Rails greater than
+2.3. It will not work with previous version of Rails because they will not
+import the layout templates from app/views/layouts in Origami. It may be
+possible to make Origami work with the Rails Engine plugin, but currently
+it only works with Rails 2.3.
+</p>
+<p>
+h2. Install
+</p>
+<p>
+Do this for now:
+</p>
+<pre>
+        script/plugin install http://github.com/endymion/origami/tree/master
+</pre>
+<p>
+This is how I&#8216;m trying to get it to work but I&#8216;m currently
+having problems making Origami available as a Ruby Gem:
 </p>
 <p>
 In config/environment.rb:
 </p>
 <pre>
-    config.gem &quot;endymion-chaise&quot;,
-      :lib     =&gt; 'chaise',
+    config.gem &quot;endymion-origami&quot;,
+      :lib     =&gt; 'origami',
       :source  =&gt; 'http://gems.github.com',
       :version =&gt; '&gt;=0.1.0'
 </pre>

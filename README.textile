@@ -1,6 +1,6 @@
-h1. Chaise
+h1. Origami
 
-A Rails Engine plugin that handles the tedious parts of setting up HTML/CSS layouts.  Developing Rails apps is a very high-level pursuit, but at some point you have to code an HTML layout and styling for your web applications.  That can be pretty tedious unless you have A Way.  There is no One True Way to lay out a web page, any more than there is One True Way to watch a sunset.  But Chaise is a nice way.
+A Rails Engine plugin that handles the tedious parts of setting up HTML/CSS layouts.  Developing Rails apps is a very high-level pursuit, but at some point you have to code an HTML layout and styling for your web applications.  That can be pretty tedious unless you have A Way.  There is no One True Way to lay out a web page, any more than there is One True Way to watch a sunset.  But Origami is a nice way.
 
 h2. The Problem
 
@@ -27,7 +27,7 @@ In your views:
     Put something here.
     <% end %>
 
-Chaise does the rest.  It wraps your page body in the necessary divs, calculates the necessary styles, and applies them using app/views/layouts/application.rb.  You get validating HTML code that works in any browser and you don't have to think about HTML or CSS.  You focus on your application instead.
+Origami does the rest.  It wraps your page body in the necessary divs, calculates the necessary styles, and applies them using app/views/layouts/application.rb.  You get validating HTML code that works in any browser and you don't have to think about HTML or CSS.  You focus on your application instead.
 
 h2. Features
 
@@ -37,11 +37,11 @@ Sensible CSS defaults from "BlueTrip":http://bluetrip.org
 
 h3. Matthew James Taylor templates
 
-Chaise uses HTML/CSS layouts by "Matthew James Taylor":http://matthewjamestaylor.com/ which have many features:
+Origami uses HTML/CSS layouts by "Matthew James Taylor":http://matthewjamestaylor.com/ which have many features:
 
 h3. No CSS Hacks
 
-The CSS used for the layouts in Chaise are 100% valid and hack free. To overcome Internet Explorer's broken box model, no horizontal padding or margins are used. Instead, this design uses percentage widths and clever relative positioning.
+The CSS used for the layouts in Origami are 100% valid and hack free. To overcome Internet Explorer's broken box model, no horizontal padding or margins are used. Instead, this design uses percentage widths and clever relative positioning.
 
 h3. SEO friendly 2-1 column ordering
 
@@ -96,7 +96,7 @@ The HTML in this layout validates as XHTML 1.0 strict.
 
 h2. Customize
 
-You can override any of the templates in the app/views/layouts folder in Chaise.  For example, if you're particular about your HTML DTD or something then copy the app/views/layouts/_head.html.erb file to your application and change it.  Rails 2.3 will use your template instead of the one from Chaise.
+You can override any of the templates in the app/views/layouts folder in Origami.  For example, if you're particular about your HTML DTD or something then copy the app/views/layouts/_head.html.erb file to your application and change it.  Rails 2.3 will use your template instead of the one from Origami.
 
 If you're in a hurry then you might rather just customize the page title and a few other things using environment.rb constants:
 
@@ -115,20 +115,20 @@ Google Analytics snippets are a common enough layout element that you can genera
 
 h2. Engine
 
-Chaise is a Rails engine. It works with versions of Rails greater than 2.3.  It will not work with previous version of Rails because they will not import the layout templates from app/views/layouts in Chaise.  It may be possible to make Chaise work with the Rails Engine plugin, but currently it only works with Rails 2.3.
+Origami is a Rails engine. It works with versions of Rails greater than 2.3.  It will not work with previous version of Rails because they will not import the layout templates from app/views/layouts in Origami.  It may be possible to make Origami work with the Rails Engine plugin, but currently it only works with Rails 2.3.
 
 h2. Install
 
 Do this for now:
 
-	script/plugin install http://github.com/endymion/chaise/tree/master
+	script/plugin install http://github.com/endymion/origami/tree/master
 
-This is how I'm trying to get it to work but I'm currently having problems making Chaise available as a Ruby Gem:
+This is how I'm trying to get it to work but I'm currently having problems making Origami available as a Ruby Gem:
 
 In config/environment.rb:
 
-    config.gem "endymion-chaise",
-      :lib     => 'chaise',
+    config.gem "endymion-origami",
+      :lib     => 'origami',
       :source  => 'http://gems.github.com',
       :version => '>=0.1.0'
 
