@@ -21,3 +21,19 @@ Rake::RDocTask.new(:rdoc) do |rdoc|
   rdoc.rdoc_files.include('README.textile')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
+
+begin
+  require 'jeweler'
+  Jeweler::Tasks.new do |gemspec|
+    gemspec.name = "origami"
+    gemspec.summary = "A Rails Engine plugin for handling layouts."
+    gemspec.email = "rap@endymion.com"
+#    gemspec.homepage = "http://endymion.com/gems/origami"
+    gemspec.description = <<-EOF
+  Origami is a Rails Engine plugin that handles the tedious parts of setting up HTML/CSS layoutspec.
+  EOF
+    gemspec.authors = ["Ryan Porter", "Matthew James Taylor"]
+  end
+rescue LoadError
+  puts "Jeweler not available. Install it with: sudo gem install technicalpickles-jeweler -s http://gems.github.com"
+end
