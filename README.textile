@@ -121,7 +121,7 @@ h2. Install
 
 Do this for now:
 
-	script/plugin install http://github.com/endymion/origami/tree/master
+	script/plugin install git://github.com/endymion/origami.git
 
 This is how I'm trying to get it to work but I'm currently having problems making Origami available as a Ruby Gem:
 
