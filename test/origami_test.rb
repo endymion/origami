@@ -12,7 +12,7 @@ require "#{File.dirname(__FILE__)}/../init"
 
 require File.dirname(__FILE__) + '/../app/helpers/layout_helper'
 
-class ChaiseTest < ActiveSupport::TestCase
+class OrigamiTest < ActiveSupport::TestCase
 
   include ActionView::Helpers::TagHelper
   include ActionView::Helpers::CaptureHelper
