@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{origami}
-  s.version = "0.1.1"
+  s.version = "0.1.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Ryan Porter", "Matthew James Taylor"]
@@ -92,7 +92,7 @@ Gem::Specification.new do |s|
      "rdoc/index.html",
      "rdoc/rdoc-style.css",
      "tasks/chaise_tasks.rake",
-     "test/chaise_test.rb",
+     "test/origami_test.rb",
      "test/test_helper.rb",
      "uninstall.rb",
      "version.yml"
@@ -103,7 +103,7 @@ Gem::Specification.new do |s|
   s.rubygems_version = %q{1.3.1}
   s.summary = %q{A Rails Engine plugin for handling layouts.}
   s.test_files = [
-    "test/chaise_test.rb",
+    "test/origami_test.rb",
      "test/test_helper.rb"
   ]
 
