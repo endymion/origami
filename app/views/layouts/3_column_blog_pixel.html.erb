@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-	<% head do %>
+<% head do %>
+
 		<title>The Blog Style 3 column Liquid Layout. Pixel widths. Cross-Browser. Equal Height Columns.</title>
 		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
 		<meta name="description" content="The Blog Style 3 column Liquid Layout. Pixel widths. Cross-Browser. Equal Height Columns." />
@@ -158,11 +158,9 @@
 		}
 	    </style>
 	    <![endif]-->
-	<% end %>
-</head>
-<body>
+<% end %>
 
-<% frame do %>
+<% body do %>
 
 <div id="header">
 	<% header do %>
@@ -258,11 +256,8 @@
 	<% footer do %>
 	    <p>This page uses the <a href="http://matthewjamestaylor.com/blog/ultimate-3-column-blog-style-pixels.htm">Ultimate 'Blog Style' 3 column Liquid Layout</a> by <a href="http://matthewjamestaylor.com">Matthew James Taylor</a>. View more <a href="http://matthewjamestaylor.com/blog/-website-layouts">website layouts</a> and <a href="http://matthewjamestaylor.com/blog/-web-design">web design articles</a>.</p>
 	<% end %>
-</div>
-
-<% end %>
 
 <%= google_analytics_tracker GOOGLE_ANALYTICS_ACCOUNT if defined?(GOOGLE_ANALYTICS_ACCOUNT) -%>
 
-</body>
+<% end %>
 </html>
