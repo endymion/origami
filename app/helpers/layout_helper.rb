@@ -13,7 +13,7 @@ module LayoutHelper
     block_to_partial('layouts/head', options, &block)
   end
 
-  def body(options = {}, &block)
+  def content(options = {}, &block)
     block_to_partial('layouts/body', options, &block)
   end
 
