@@ -15,12 +15,16 @@
 <% end -%>
 <meta name="robots" content="index, follow" />
 
-<%= stylesheet_link_tag 'compiled/screen', :media => 'screen, projection' %>
-<%= stylesheet_link_tag 'compiled/style', :media => 'screen, projection' %>
-<%= stylesheet_link_tag 'compiled/print', :media => 'print' %>
-<!--[if IE]><%= stylesheet_link_tag 'compiled/ie', :media => 'screen, projection' %><![endif]-->
-
-<%= render :partial => 'layouts/layout_and_theme_stylesheets', :locals => { :layout => layout } %>
+<%= render :partial => 'layouts/stylesheets', :locals => { :layout => layout } %>
+<%  theme = THEME if defined?(THEME)
+	theme = @theme unless @theme.nil?
+	if theme.nil? %>
+	<%= content %>
+<% else %>
+	<%= stylesheet_link_tag "layouts/#{layout}" %>
+	<%= stylesheet_link_tag theme %>
+<% end %>
 
 <%= render :partial => 'layouts/javascript_includes' %>
+
 </head>
