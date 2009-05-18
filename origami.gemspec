@@ -2,11 +2,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{origami}
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Ryan Porter", "Matthew James Taylor"]
-  s.date = %q{2009-05-11}
+  s.date = %q{2009-05-18}
   s.description = %q{Origami is a Rails Engine plugin that handles the tedious parts of setting up HTML/CSS layoutspec.}
   s.email = %q{rap@endymion.com}
   s.extra_rdoc_files = [
@@ -69,7 +69,7 @@ Gem::Specification.new do |s|
      "assets/bluetrip-css-framework/img/icons/xls.png",
      "init.rb",
      "install.rb",
-     "lib/chaise.rb",
+     "lib/origami.rb",
      "origami.gemspec",
      "public/stylesheets/1_column_em.css",
      "public/stylesheets/1_column_percentage.css",
@@ -94,7 +94,8 @@ Gem::Specification.new do |s|
      "tasks/chaise_tasks.rake",
      "test/chaise_test.rb",
      "test/test_helper.rb",
-     "uninstall.rb"
+     "uninstall.rb",
+     "version.yml"
   ]
   s.has_rdoc = true
   s.rdoc_options = ["--charset=UTF-8"]
