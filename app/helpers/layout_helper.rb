@@ -5,12 +5,8 @@ module LayoutHelper
     concat render(:partial => partial_name, :locals => options)
   end
 
-  def layout_and_theme_stylesheets(layout, options = {}, &block)
-    block_to_partial('layouts/layout_and_theme_stylesheets', options.merge(:layout => layout), &block)
-  end
-
-  def head(options = {}, &block)
-    block_to_partial('layouts/head', options, &block)
+  def head(layout, options = {}, &block)
+    block_to_partial('layouts/head', options.merge(:layout => layout), &block)
   end
 
   def body(options = {}, &block)

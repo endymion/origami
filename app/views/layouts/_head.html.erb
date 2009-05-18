@@ -15,9 +15,12 @@
 <% end -%>
 <meta name="robots" content="index, follow" />
 
-<%= stylesheet_link_tag 'screen', :media => 'screen, projection' %>
-<%= stylesheet_link_tag 'style', :media => 'screen, projection' %>
-<%= stylesheet_link_tag 'print', :media => 'print' %>
+<%= stylesheet_link_tag 'compiled/screen', :media => 'screen, projection' %>
+<%= stylesheet_link_tag 'compiled/style', :media => 'screen, projection' %>
+<%= stylesheet_link_tag 'compiled/print', :media => 'print' %>
+<!--[if IE]><%= stylesheet_link_tag 'compiled/ie', :media => 'screen, projection' %><![endif]-->
+
+<%= render :partial => 'layouts/layout_and_theme_stylesheets', :locals => { :layout => layout } %>
 
 <%= render :partial => 'layouts/javascript_includes' %>
 </head>
