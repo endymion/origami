@@ -18,12 +18,11 @@
 <%= render :partial => 'layouts/stylesheets', :locals => { :layout => layout } %>
 <%  theme = THEME if defined?(THEME)
 	theme = @theme unless @theme.nil?
-	if theme.nil? %>
-	<%= content %>
-<% else %>
-	<%= stylesheet_link_tag "layouts/#{layout}" %>
-	<%= stylesheet_link_tag theme %>
-<% end %>
+	if theme.nil? -%>
+<% else -%>
+<%= stylesheet_link_tag "layouts/#{layout}" %>
+<%= stylesheet_link_tag theme %>
+<% end -%>
 
 <%= render :partial => 'layouts/javascript_includes' %>
 
