@@ -1,10 +1,10 @@
 h1. Origami
 
-There are some fantastic "CSS frameworks":http://en.wikipedia.org/wiki/CSS_framework out there, and there a growing number of tools like Sass:http://haml.hamptoncatlin.com/docs/rdoc/classes/Sass.html and Compass:http://haml.hamptoncatlin.com/docs/rdoc/classes/Sass.html for working with those frameworks from a high level.
+There are some fantastic "CSS frameworks":http://en.wikipedia.org/wiki/CSS_framework out there, and there a growing number of tools like "Sass":http://haml.hamptoncatlin.com/docs/rdoc/classes/Sass.html and "Compass":http://haml.hamptoncatlin.com/docs/rdoc/classes/Sass.html for working with those frameworks from a high level.
 
-However, you do not get the best results if you do your page layout purely with the grid positioning systems provided in CSS frameworks.  This is because the higher up content is in your page code, the more important it is considered by search engine algorithms. To make your website as optimised as possible your main page content must come before the side columns. Origami does exactly that: The main page comes first, then supplemental columns. You can also override the layouts to place your columns in any order you like.
+However, you do not get the best results if you do your page layout purely with the grid positioning systems provided in CSS frameworks.  This is because the higher up content is in your page code, the more important it is considered by search engine algorithms. To make your website as optimized as possible your main page content must come before the side columns. Origami does exactly that: The main page comes first, then supplemental columns. You can also override the layouts to place your columns in any order you like.
 
-Origami is agnostic of CSS frameworks and it's easy to integrate with Compass and Sass, so that your layouts can easily use some of the fantastic frameworks like Blueprint:http://www.blueprintcss.org/ that are provided by Compass.
+Origami is agnostic of CSS frameworks and it's easy to integrate with Compass and Sass, so that your layouts can easily use some of the fantastic frameworks like "Blueprint":http://www.blueprintcss.org/ that are provided by Compass.
 
 h2. The Problem
 
