@@ -1,6 +1,10 @@
 h1. Origami
 
-A Rails Engine plugin that handles the tedious parts of setting up HTML/CSS layouts.  Developing Rails apps is a very high-level pursuit, but at some point you have to code an HTML layout and styling for your web applications.  That can be pretty tedious unless you have A Way.  There is no One True Way to lay out a web page, any more than there is One True Way to watch a sunset.  But Origami is a nice way.
+There are some fantastic "CSS frameworks":http://en.wikipedia.org/wiki/CSS_framework out there, and there a growing number of tools like Sass:http://haml.hamptoncatlin.com/docs/rdoc/classes/Sass.html and Compass:http://haml.hamptoncatlin.com/docs/rdoc/classes/Sass.html for working with those frameworks from a high level.
+
+However, you do not get the best results if you do your page layout purely with the grid positioning systems provided in CSS frameworks.  This is because the higher up content is in your page code, the more important it is considered by search engine algorithms. To make your website as optimised as possible your main page content must come before the side columns. Origami does exactly that: The main page comes first, then supplemental columns. You can also override the layouts to place your columns in any order you like.
+
+Origami is agnostic of CSS frameworks and it's easy to integrate with Compass and Sass, so that your layouts can easily use some of the fantastic frameworks like Blueprint:http://www.blueprintcss.org/ that are provided by Compass.
 
 h2. The Problem
 
@@ -27,53 +31,49 @@ In your views:
     Put something here.
     <% end %>
 
-Origami does the rest.  It wraps your page body in the necessary divs, calculates the necessary styles, and applies them using app/views/layouts/application.rb.  You get validating HTML code that works in any browser and you don't have to think about HTML or CSS.  You focus on your application instead.
+Your mental model for laying out a page consists of the normal page body, plus in some cases things like a "column_2" section, a "header", a "footer", etc.  Origami handles the implementation of those concepts for you.  It wraps your page body in the necessary divs, calculates the necessary dynamic styles, and applies them.  You get validating HTML code that works in any browser and you don't have to think about HTML or CSS.  You focus on your application instead.
 
 h2. Features
-
-h3. Blueprint
-
-Sensible CSS defaults from "BlueTrip":http://bluetrip.org
 
 h3. Matthew James Taylor templates
 
 Origami uses HTML/CSS layouts by "Matthew James Taylor":http://matthewjamestaylor.com/ which have many features:
 
-h3. No CSS Hacks
+h4. No CSS Hacks
 
 The CSS used for the layouts in Origami are 100% valid and hack free. To overcome Internet Explorer's broken box model, no horizontal padding or margins are used. Instead, this design uses percentage widths and clever relative positioning.
 
-h3. SEO friendly 2-1 column ordering
+h4. SEO friendly 2-1 column ordering
 
-The higher up content is in your page code, the more important it is considered by search engine algorithms. To make your website as optimised as possible your main page content must come before the side columns. This layout does exactly that: The the right-hand main page comes first, then the left column (see the nested div structure diagram for more info). The columns can also be configured in the opposite order if required.
+The higher up content is in your page code, the more important it is considered by search engine algorithms. To make your website as optimised as possible your main page content must come before the side columns. This layout does exactly that: The the main page comes first, then any supplemental columns. The columns can also be configured in the opposite order if required.
 
-h3. Full length column background colours
+h4. Full length column background colours
 
-In this layout the background colours of each column will always stretch to the length of the longest column. This feature was traditionally only available with table based layouts but now with a little CSS trickery we can do exactly the same with divs. Say goodbye to annoying short columns!
+In these layouts the background colours of each column will always stretch to the length of the longest column. This feature was traditionally only available with table based layouts but now with a little CSS trickery we can do exactly the same with divs. Say goodbye to annoying short columns!
 
-h3. No Images
+h4. No Images
 
-This layout requires no images. Many CSS website designs need images to colour in the column backgrounds but that is not necessary with this design. Why waste bandwidth and precious HTTP requests when you can do everything in pure CSS and XHTML?
+The layouts require no images. Many CSS website designs need images to colour in the column backgrounds but that is not necessary with this design. Why waste bandwidth and precious HTTP requests when you can do everything in pure CSS and XHTML?
 
-h3. No JavaScript
+h4. No JavaScript
 
 JavaScript is not required. Some website layouts rely on JavaScript hacks to resize divs and force elements into place but you won't see any of that nonsense here.
 
-h3. Resizable text compatible
+h4. Resizable text compatible
 
-This layout is fully compatible with resizable text. Resizable text is important for web accessibility. People who are vision impaired can make the text larger so it's easier for them to read. It is becoming increasingly more important to make your website resizable text compatible because people are expecting higher levels of web accessibility. Apple have made resizing the text on a website simple with the pinch gesture on their multi-touch trackpad. So far this trackpad is only available on the MacBook Air but it will soon be rolled out to all of their systems. Is your website text-resizing compatible?
+The layouts are fully compatible with resizable text. Resizable text is important for web accessibility. People who are vision impaired can make the text larger so it's easier for them to read. It is becoming increasingly more important to make your website resizable text compatible because people are expecting higher levels of web accessibility. Apple have made resizing the text on a website simple with the pinch gesture on their multi-touch trackpad. So far this trackpad is only available on the MacBook Air but it will soon be rolled out to all of their systems. Is your website text-resizing compatible?
 
-h3. No Quirks Mode
+h4. No Quirks Mode
 
-This liquid layout does not require the XML declaration for it to display correctly in older versions of Internet Explorer. This version works without it and is thus never in quirks mode.
+The liquid layouts do not require the XML declarations for them to display correctly in older versions of Internet Explorer. This version works without it and is thus never in quirks mode.
 
-h3. No IE Conditional Comments
+h4. No IE Conditional Comments
 
-Only one stylesheet is used with this layout This means that IE conditional comments are not needed to set extra CSS rules for older versions of Internet Explorer.  This also means that ActivePackager can compress and consolidate the styles without breaking them.
+Only one stylesheet is used with the layouts. This means that IE conditional comments are not needed to set extra CSS rules for older versions of Internet Explorer.  This also means that ActivePackager can compress and consolidate the styles without breaking them.
 
-h3. Browser Compatibility
+h4. Browser Compatibility
 
-This left menu liquid Layout has been tested on the following browsers:
+The layouts have been tested on the following browsers:
 
 * iPhone & iPod Touch
 ** Safari
@@ -90,9 +90,9 @@ This left menu liquid Layout has been tested on the following browsers:
 ** Explorer 5.5, 6 & 7
 ** Netscape 8
 
-h3. Valid XHTML strict markup
+h4. Valid XHTML strict markup
 
-The HTML in this layout validates as XHTML 1.0 strict.
+The HTML in the layouts validates as XHTML 1.0 strict.
 
 h2. Customize
 
@@ -119,12 +119,6 @@ Origami is a Rails engine. It works with versions of Rails greater than 2.3.  It
 
 h2. Install
 
-Do this for now:
-
-	script/plugin install git://github.com/endymion/origami.git
-
-This is how I'm trying to get it to work but I'm currently having problems making Origami available as a Ruby Gem:
-
 In config/environment.rb:
 
     config.gem "endymion-origami",
@@ -136,3 +130,11 @@ Vendor the gem:
 
     rake gems:install
     rake gems:unpack
+
+Note: the unpack step is required because this gem is a Rails Engine plugin.
+
+Or, if you prefer to install it as a plugin:
+
+	script/plugin install git://github.com/endymion/origami.git
+
+
