@@ -1,32 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<%= head '1_column_pixel' %>
-
+<%= head %>
 <% body do %>
-
 <div id="header">
 <% header do %>
-This is the header.  Put content here by adding this to your template:
-<pre><code><% content_for :header do %>
-<% end %></code></pre>
+<h1>:header</h1>
+<p>This is the header.  Override this by this to your template:
+	<pre><code>&#60;&#37; content_for :header do &#37;&#62;Your header text here.&#60;&#37; content_for end &#37;&#62;</code></pre></p>
 <% end %>
 </div>
 <div class="colmask fullpage">
-    <div class="col1">
-		<%= render :partial => 'layouts/flashes' -%>
-		<% column_1 do %>
-			<!-- Your page content will end up in here. -->
-		<% end %>
-    </div>
+<div class="col1">
+<%= render :partial => 'layouts/flashes' -%>
+<% column_1 do %>
+<%# Your page content will end up in here. %>
+<% end %>
+</div>
 </div>
 <div id="footer">
-	<% footer do %>
-	    <p>This page uses the <a href="http://matthewjamestaylor.com/blog/ultimate-1-column-full-page-pixels.htm">Ultimate 'Full Page' 1 column Liquid Layout</a> by <a href="http://matthewjamestaylor.com">Matthew James Taylor</a>. View more <a href="http://matthewjamestaylor.com/blog/-website-layouts">website layouts</a> and <a href="http://matthewjamestaylor.com/blog/-web-design">web design articles</a>.</p>
-	<% end %>
+<% footer do %>
+<h1>:footer</h1>
+<p>This is the footer.  Override this by this to your template:
+	<pre><code>&#60;&#37; content_for :footer do &#37;&#62;Your footer text here.&#60;&#37; content_for end &#37;&#62;</code></pre></p>
+<% end %>
 </div>
-
 <%= google_analytics_tracker GOOGLE_ANALYTICS_ACCOUNT if defined?(GOOGLE_ANALYTICS_ACCOUNT) -%>
-
 <% end %>
 </html>

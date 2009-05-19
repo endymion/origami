@@ -5,8 +5,8 @@ module LayoutHelper
     concat render(:partial => partial_name, :locals => options)
   end
 
-  def head(layout, options = {}, &block)
-    render(:partial => 'layouts/head', :locals => {:layout => layout})
+  def head(options = {})
+    render(:partial => 'layouts/head', :locals => options)
   end
 
   def body(options = {}, &block)
@@ -34,7 +34,8 @@ module LayoutHelper
   end
 
   def google_analytics_tracker(account_id, options = {})
-    render(:partial => 'layouts/google_analytics_tracker', :locals => options.merge(:account_id => account_id))
+    render(:partial => 'layouts/google_analytics_tracker',
+      :locals => options.merge(:account_id => account_id))
   end
   
 end

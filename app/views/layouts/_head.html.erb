@@ -15,12 +15,12 @@
 <% end -%>
 <meta name="robots" content="index, follow" />
 
-<%= render :partial => 'layouts/stylesheets', :locals => { :layout => layout } %>
+<%= render :partial => 'layouts/stylesheets' %>
 <%  theme = THEME if defined?(THEME)
 	theme = @theme unless @theme.nil?
 	if theme.nil? -%>
 <% else -%>
-<%= stylesheet_link_tag "layouts/#{layout}" %>
+<%= stylesheet_link_tag response.layout %>
 <%= stylesheet_link_tag theme %>
 <% end -%>
 

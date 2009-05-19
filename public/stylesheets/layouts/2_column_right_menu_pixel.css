@@ -98,12 +98,34 @@ p {
     width:100%;			/* width of whole page */
 	overflow:hidden;	/* This chops off any overhanging divs */
 }
-/* 1 column full page settings */
-.fullpage {
+/* 2 column right menu settings */
+.rightmenu {
+    background:#ff9;
+}
+.rightmenu .colleft {
+    float:left;
+    width:200%;
+    margin-left:-200px;
+    position:relative;
+    right:100%;
     background:#fff;
 }
-.fullpage .col1 {
-    margin:0 15px;
+.rightmenu .col1wrap {
+    float:left;
+    width:50%;
+    position:relative;
+    left:50%;
+    padding-bottom:1em;
+}
+.rightmenu .col1 {
+    margin:0 15px 0 215px;
+    overflow:hidden;
+}
+.rightmenu .col2 {
+    float:right;
+    width:170px;
+    position:relative;
+    left:185px;
 }
 /* Footer styles */
 #footer {
@@ -115,3 +137,12 @@ p {
     padding:10px;
     margin:0;
 }
+/* --> */
+</style>
+<!--[if lt IE 7]>
+<style media="screen" type="text/css">
+.col1 {
+    width:100%;
+}
+</style>
+<![endif]-->
