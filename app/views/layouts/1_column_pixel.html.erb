@@ -6,20 +6,11 @@
 <% body do %>
 
 <div id="header">
-	<% header do %>
-	    <p><a href="http://matthewjamestaylor.com/blog/ultimate-multi-column-liquid-layouts-em-and-pixel-widths" title="Ultimate multi-column liquid layouts (em and pixel widths)">&laquo; Back to the CSS article</a> by <a href="http://matthewjamestaylor.com">Matthew James Taylor</a></p>
-	    <h1>The 'Full Page' 1 column Liquid Layout (Pixel-widths)</h1>
-	    <h2>No CSS hacks. No Images. No JavaScript. Cross-browser.</h2>
-	    <ul>
-	        <li><a href="http://matthewjamestaylor.com/blog/ultimate-3-column-holy-grail-pixels.htm">3 Column <span>Holy Grail</span></a></li>
-	        <li><a href="http://matthewjamestaylor.com/blog/ultimate-3-column-blog-style-pixels.htm">3 Column <span>Blog Style</span></a></li>
-	        <li><a href="http://matthewjamestaylor.com/blog/ultimate-2-column-left-menu-pixels.htm">2 Column <span>Left Menu</span></a></li>
-	        <li><a href="http://matthewjamestaylor.com/blog/ultimate-2-column-right-menu-pixels.htm">2 Column <span>Right Menu</span></a></li>
-	        <li><a href="http://matthewjamestaylor.com/blog/ultimate-1-column-full-page-pixels.htm" class="active">1 Column <span>Full Page</span></a></li>
-	        <li><a href="http://matthewjamestaylor.com/blog/ultimate-stacked-columns-pixels.htm">Stacked <span>Columns</span></a></li>
-	    </ul>
-		<p id="layoutdims">Measure columns in: <strong>Pixel widths</strong> | <a href="http://matthewjamestaylor.com/blog/ultimate-1-column-full-page-ems.htm">Em widths</a> | <a href="http://matthewjamestaylor.com/blog/perfect-full-page.htm">Percentage widths</a></p>
-	<% end %>
+<% header do %>
+This is the header.  Put content here by adding this to your template:
+<pre><code><% content_for :header do %>
+<% end %></code></pre>
+<% end %>
 </div>
 <div class="colmask fullpage">
     <div class="col1">
