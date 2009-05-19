@@ -2,11 +2,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{origami}
-  s.version = "0.1.3"
+  s.version = "0.1.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Ryan Porter", "Matthew James Taylor"]
-  s.date = %q{2009-05-18}
+  s.date = %q{2009-05-19}
   s.description = %q{Origami is a Rails Engine plugin that handles the tedious parts of setting up HTML/CSS layoutspec.}
   s.email = %q{rap@endymion.com}
   s.extra_rdoc_files = [
@@ -43,30 +43,8 @@ Gem::Specification.new do |s|
      "app/views/layouts/_header.html.erb",
      "app/views/layouts/_image_replacement.html.erb",
      "app/views/layouts/_javascript_includes.html.erb",
-     "app/views/layouts/_layout_and_theme_stylesheets.html.erb",
+     "app/views/layouts/_stylesheets.html.erb",
      "app/views/layouts/stacked_columns.html.erb",
-     "assets/bluetrip-css-framework/LICENSE",
-     "assets/bluetrip-css-framework/README.rst",
-     "assets/bluetrip-css-framework/css/ie.css",
-     "assets/bluetrip-css-framework/css/print.css",
-     "assets/bluetrip-css-framework/css/screen.css",
-     "assets/bluetrip-css-framework/css/style.css",
-     "assets/bluetrip-css-framework/examples/grid.html",
-     "assets/bluetrip-css-framework/examples/index.html",
-     "assets/bluetrip-css-framework/examples/test-small.jpg",
-     "assets/bluetrip-css-framework/img/grid.png",
-     "assets/bluetrip-css-framework/img/icons/cross.png",
-     "assets/bluetrip-css-framework/img/icons/doc.png",
-     "assets/bluetrip-css-framework/img/icons/email.png",
-     "assets/bluetrip-css-framework/img/icons/external.png",
-     "assets/bluetrip-css-framework/img/icons/feed.png",
-     "assets/bluetrip-css-framework/img/icons/im.png",
-     "assets/bluetrip-css-framework/img/icons/information.png",
-     "assets/bluetrip-css-framework/img/icons/key.png",
-     "assets/bluetrip-css-framework/img/icons/pdf.png",
-     "assets/bluetrip-css-framework/img/icons/tick.png",
-     "assets/bluetrip-css-framework/img/icons/visited.png",
-     "assets/bluetrip-css-framework/img/icons/xls.png",
      "init.rb",
      "install.rb",
      "lib/origami.rb",
