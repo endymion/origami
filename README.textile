@@ -119,6 +119,14 @@ Origami is a Rails engine. It works with versions of Rails greater than 2.3.  It
 
 h2. Install
 
+h3. As a Rails plugin
+
+	script/plugin install git://github.com/endymion/origami.git
+
+h3. As a Ruby Gem
+
+I would really like to know why this method of installing it as a gem doesn't work?
+
 In config/environment.rb:
 
     config.gem "endymion-origami",
@@ -132,9 +140,4 @@ Vendor the gem:
     rake gems:unpack
 
 Note: the unpack step is required because this gem is a Rails Engine plugin.
-
-Or, if you prefer to install it as a plugin:
-
-	script/plugin install git://github.com/endymion/origami.git
-
 
