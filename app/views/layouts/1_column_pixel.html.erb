@@ -1,76 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<% head do %>
-		<title>The Full Page 1 column Liquid Layout. Pixel padding widths. Cross-Browser. Equal Height Columns.</title>
-		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
-		<meta name="description" content="The Full Page 1 column Liquid Layout. Pixel padding widths. Cross-Browser. Equal Height Columns." />
-		<meta name="keywords" content="The Full Page 1 column Liquid Layout. Pixel padding widths. Cross-Browser. Equal Height Columns." />
-		<meta name="robots" content="index, follow" />
-		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-		
-	<% layout_and_theme_stylesheets '1_column_pixel' do %>
-	    <style media="screen" type="text/css">
-	    /* <!-- */
-	    /* General styles */
-	    body {
-	        margin:0;
-	        padding:0;
-	        border:0;			/* This removes the border around the viewport in old versions of IE */
-	        width:100%;
-	        min-width:600px;    /* Minimum width of layout - remove line if not required */
-								/* The min-width property does not work in old versions of Internet Explorer */
-	    }
-		/* Header styles */
-	    #header {
-	        clear:both;
-	        float:left;
-	        width:100%;
-	    }
-		#header {
-			border-bottom:1px solid #000;
-		}
-		#header p,
-		#header h1,
-		#header h2 {
-		    padding:.4em 15px 0 15px;
-	        margin:0;
-		}
-		/* 'widths' sub menu */
-		#layoutdims {
-			clear:both;
-			border-top:4px solid #000;
-			margin:0;
-			padding:6px 15px !important;
-			text-align:right;
-		}
-		/* column container */
-		.colmask {
-			position:relative;		/* This fixes the IE7 overflow hidden bug and stops the layout jumping out of place */
-		    clear:both;
-		    float:left;
-	        width:100%;			/* width of whole page */
-			overflow:hidden;	/* This chops off any overhanging divs */
-		}
-		/* 1 column full page settings */
-		.fullpage .col1 {
-	        margin:0 15px;
-		}
-		/* Footer styles */
-		#footer {
-	        clear:both;
-	        float:left;
-	        width:100%;
-			border-top:1px solid #000;
-	    }
-	    #footer p {
-	        padding:10px;
-	        margin:0;
-	    }
-	    /* --> */
-	    </style>
-	<% end %>
-<% end %>
+<%= head '1_column_pixel' %>
 
 <% body do %>
 

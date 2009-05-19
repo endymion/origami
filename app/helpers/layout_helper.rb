@@ -6,7 +6,7 @@ module LayoutHelper
   end
 
   def head(layout, options = {}, &block)
-    block_to_partial('layouts/head', options.merge(:layout => layout), &block)
+    render(:partial => 'layouts/head', :locals => {:layout => layout})
   end
 
   def body(options = {}, &block)
